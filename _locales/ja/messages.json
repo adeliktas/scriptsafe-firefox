@@ -36,7 +36,7 @@
       "message": "不要なコンテンツモード："
    },
    "annoyancesmodedesc": {
-      "description": "Relaxed = whitelisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if whitelisted",
+      "description": "Relaxed = allowlisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if allowlisted",
       "message": "寛容=ホワイトリストに登録されたドメインはブロックされません。厳格=不要なドメインは、ホワイトリストに登録されていてもブロックされます"
    },
    "antisocialpopup": {
@@ -48,7 +48,7 @@
       "message": "SNS 拒否/ブロックモード："
    },
    "antisocialdesc": {
-      "description": "always remove social widgets/buttons, even if whitelisted",
+      "description": "always remove social widgets/buttons, even if allowlisted",
       "message": "常にホワイトリストに登録しても、SNS ウィジェット/ボタンを削除"
    },
    "antisocialdesc2": {
@@ -479,9 +479,9 @@
       "description": "-Off-",
       "message": "-オフ-"
    },
-   "onlyunwhitelisted": {
-      "description": "Only on Unwhitelisted Domains",
-      "message": "Unwhitelistedドメインでのみ"
+   "onlyunallowlisted": {
+      "description": "Only on Unallowlisted Domains",
+      "message": "Unallowlistedドメインでのみ"
    },
    "options": {
       "description": "Options",
@@ -704,7 +704,7 @@
       "message": "信頼"
    },
    "uaspoofallow": {
-      "description": "Apply to whitelisted domains as well",
+      "description": "Apply to allowlisted domains as well",
       "message": "同様にホワイトリストに登録されたドメインに適用されます"
    },
    "updatedisable": {
@@ -803,39 +803,39 @@
       "description": "+ Whitelist",
       "message": "+ホワイトリスト"
    },
-   "blacklist": {
+   "denylist": {
       "description": "Blacklist",
       "message": "ブラックリスト"
    },
-   "whitelist": {
+   "allowlist": {
       "description": "Whitelist",
       "message": "ホワイトリスト"
    },
-   "blacklisted": {
+   "denylisted": {
       "description": "Blacklisted",
       "message": "ブラックリストに載って"
    },
-   "whitelisted": {
+   "allowlisted": {
       "description": "Whitelisted",
       "message": "ホワイトリストに登録"
    },
-   "blacklistlow": {
-      "description": "blacklist",
+   "denylistlow": {
+      "description": "denylist",
       "message": "ブラックリスト"
    },
-   "whitelistlow": {
-      "description": "whitelist",
+   "allowlistlow": {
+      "description": "allowlist",
       "message": "ホワイトリスト"
    },
-   "blacklistmove": {
+   "denylistmove": {
       "description": "Move to Blacklist",
       "message": "ブラックリストに移動"
    },
-   "whitelistmove": {
+   "allowlistmove": {
       "description": "Move to Whitelist",
       "message": "ホワイトリストに移動"
    },
-   "whitelistblacklist": {
+   "allowlistdenylist": {
       "description": "Whitelist / Blacklist",
       "message": "ホワイトリスト/ブラックリスト"
    },

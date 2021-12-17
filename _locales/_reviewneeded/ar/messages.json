@@ -36,7 +36,7 @@
       "message": "وضع المحتوى غير المرغوب فيه:"
    },
    "annoyancesmodedesc": {
-      "description": "Relaxed = whitelisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if whitelisted",
+      "description": "Relaxed = allowlisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if allowlisted",
       "message": "لن يكون قد تم حظره استرخاء = المجالات اللائحة البيضاء. سيتم حظر = صارمة المجالات في قائمة المجال غير المرغوب فيها حتى لو اللائحة البيضاء"
    },
    "antisocialpopup": {
@@ -48,7 +48,7 @@
       "message": "الوضع المعادي للمجتمع:"
    },
    "antisocialdesc": {
-      "description": "always remove social widgets/buttons, even if whitelisted",
+      "description": "always remove social widgets/buttons, even if allowlisted",
       "message": "دائما إزالة الحاجيات / أزرار الاجتماعية، حتى إذا اللائحة البيضاء"
    },
    "antisocialdesc2": {
@@ -479,9 +479,9 @@
       "description": "-Off-",
       "message": "-إيقاف-"
    },
-   "onlyunwhitelisted": {
-      "description": "Only on Unwhitelisted Domains",
-      "message": "فقط على مجالات Unwhitelisted"
+   "onlyunallowlisted": {
+      "description": "Only on Unallowlisted Domains",
+      "message": "فقط على مجالات Unallowlisted"
    },
    "options": {
       "description": "Options",
@@ -704,7 +704,7 @@
       "message": "ثقة"
    },
    "uaspoofallow": {
-      "description": "Apply to whitelisted domains as well",
+      "description": "Apply to allowlisted domains as well",
       "message": "تنطبق على المجالات اللائحة البيضاء فضلا"
    },
    "updatedisable": {
@@ -803,39 +803,39 @@
       "description": "+ Whitelist",
       "message": "+ البيضاء"
    },
-   "blacklist": {
+   "denylist": {
       "description": "Blacklist",
       "message": "القائمة السوداء"
    },
-   "whitelist": {
+   "allowlist": {
       "description": "Whitelist",
       "message": "القائمة البيضاء"
    },
-   "blacklisted": {
+   "denylisted": {
       "description": "Blacklisted",
       "message": "القائمة السوداء"
    },
-   "whitelisted": {
+   "allowlisted": {
       "description": "Whitelisted",
       "message": "اللائحة البيضاء"
    },
-   "blacklistlow": {
-      "description": "blacklist",
+   "denylistlow": {
+      "description": "denylist",
       "message": "القائمة السوداء"
    },
-   "whitelistlow": {
-      "description": "whitelist",
+   "allowlistlow": {
+      "description": "allowlist",
       "message": "القائمة البيضاء"
    },
-   "blacklistmove": {
+   "denylistmove": {
       "description": "Move to Blacklist",
       "message": "الانتقال إلى القائمة السوداء"
    },
-   "whitelistmove": {
+   "allowlistmove": {
       "description": "Move to Whitelist",
       "message": "الانتقال إلى القائمة البيضاء"
    },
-   "whitelistblacklist": {
+   "allowlistdenylist": {
       "description": "Whitelist / Blacklist",
       "message": "القائمة البيضاء / السوداء"
    },

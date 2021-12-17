@@ -36,7 +36,7 @@
       "message": "Neželjene Nacin Sadržaj:"
    },
    "annoyancesmodedesc": {
-      "description": "Relaxed = whitelisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if whitelisted",
+      "description": "Relaxed = allowlisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if allowlisted",
       "message": "Opušteni = popisu dopuštenih domene nece biti blokiran; Strogi = domene u neželjenom popisu domena ce biti blokiran, cak i ako na bijeloj listi"
    },
    "antisocialpopup": {
@@ -48,7 +48,7 @@
       "message": "Antisocijalni Nacin Rada:"
    },
    "antisocialdesc": {
-      "description": "always remove social widgets/buttons, even if whitelisted",
+      "description": "always remove social widgets/buttons, even if allowlisted",
       "message": "uvijek uklonite widgete / gumbe društvenih, cak i ako je na bijeloj listi"
    },
    "antisocialdesc2": {
@@ -479,9 +479,9 @@
       "description": "-Off-",
       "message": "-Off-"
    },
-   "onlyunwhitelisted": {
-      "description": "Only on Unwhitelisted Domains",
-      "message": "Samo na Unwhitelisted Domena"
+   "onlyunallowlisted": {
+      "description": "Only on Unallowlisted Domains",
+      "message": "Samo na Unallowlisted Domena"
    },
    "options": {
       "description": "Options",
@@ -704,7 +704,7 @@
       "message": "povjerenje"
    },
    "uaspoofallow": {
-      "description": "Apply to whitelisted domains as well",
+      "description": "Apply to allowlisted domains as well",
       "message": "Nanesite na bijeloj listi domena, kao i"
    },
    "updatedisable": {
@@ -803,39 +803,39 @@
       "description": "+ Whitelist",
       "message": "+ Whitelist"
    },
-   "blacklist": {
+   "denylist": {
       "description": "Blacklist",
       "message": "Staviti na Crnu Listu"
    },
-   "whitelist": {
+   "allowlist": {
       "description": "Whitelist",
       "message": "Popis Dopuštenih"
    },
-   "blacklisted": {
+   "denylisted": {
       "description": "Blacklisted",
       "message": "Crnoj Listi"
    },
-   "whitelisted": {
+   "allowlisted": {
       "description": "Whitelisted",
       "message": "Na Popisu Dopuštenih"
    },
-   "blacklistlow": {
-      "description": "blacklist",
+   "denylistlow": {
+      "description": "denylist",
       "message": "staviti na crnu listu"
    },
-   "whitelistlow": {
-      "description": "whitelist",
+   "allowlistlow": {
+      "description": "allowlist",
       "message": "popis dopuštenih"
    },
-   "blacklistmove": {
+   "denylistmove": {
       "description": "Move to Blacklist",
       "message": "Pomicanje na Blacklist"
    },
-   "whitelistmove": {
+   "allowlistmove": {
       "description": "Move to Whitelist",
       "message": "Pomicanje na Popis Pouzdanih Adresa"
    },
-   "whitelistblacklist": {
+   "allowlistdenylist": {
       "description": "Whitelist / Blacklist",
       "message": "Popis Dopuštenih / Crna Lista"
    },

@@ -36,7 +36,7 @@
       "message": "Nežiaduci Obsah Mode:"
    },
    "annoyancesmodedesc": {
-      "description": "Relaxed = whitelisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if whitelisted",
+      "description": "Relaxed = allowlisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if allowlisted",
       "message": "Uvolnené = povolených doménach nebudú blokované; Prísne = domény v zozname nechcené domény budú blokované aj ked na zozname povolených"
    },
    "antisocialpopup": {
@@ -48,7 +48,7 @@
       "message": "Antisocial Mode:"
    },
    "antisocialdesc": {
-      "description": "always remove social widgets/buttons, even if whitelisted",
+      "description": "always remove social widgets/buttons, even if allowlisted",
       "message": "vždy odstránit widgety tlacidiel / sociálne, aj ked na zozname povolených"
    },
    "antisocialdesc2": {
@@ -479,9 +479,9 @@
       "description": "-Off-",
       "message": "-Off-"
    },
-   "onlyunwhitelisted": {
-      "description": "Only on Unwhitelisted Domains",
-      "message": "Iba na Unwhitelisted Domény"
+   "onlyunallowlisted": {
+      "description": "Only on Unallowlisted Domains",
+      "message": "Iba na Unallowlisted Domény"
    },
    "options": {
       "description": "Options",
@@ -704,7 +704,7 @@
       "message": "dôvera"
    },
    "uaspoofallow": {
-      "description": "Apply to whitelisted domains as well",
+      "description": "Apply to allowlisted domains as well",
       "message": "Naneste na povolených doménach rovnako"
    },
    "updatedisable": {
@@ -803,39 +803,39 @@
       "description": "+ Whitelist",
       "message": "+ Zoznam Povolených"
    },
-   "blacklist": {
+   "denylist": {
       "description": "Blacklist",
       "message": "Cierna listina"
    },
-   "whitelist": {
+   "allowlist": {
       "description": "Whitelist",
       "message": "Whitelist"
    },
-   "blacklisted": {
+   "denylisted": {
       "description": "Blacklisted",
       "message": "Na Ciernej Listine"
    },
-   "whitelisted": {
+   "allowlisted": {
       "description": "Whitelisted",
       "message": "Whitelisted"
    },
-   "blacklistlow": {
-      "description": "blacklist",
+   "denylistlow": {
+      "description": "denylist",
       "message": "cierna listina"
    },
-   "whitelistlow": {
-      "description": "whitelist",
-      "message": "whitelist"
+   "allowlistlow": {
+      "description": "allowlist",
+      "message": "allowlist"
    },
-   "blacklistmove": {
+   "denylistmove": {
       "description": "Move to Blacklist",
       "message": "Presunút do Zoznamu Zakázaných"
    },
-   "whitelistmove": {
+   "allowlistmove": {
       "description": "Move to Whitelist",
       "message": "Presunút do Whitelist"
    },
-   "whitelistblacklist": {
+   "allowlistdenylist": {
       "description": "Whitelist / Blacklist",
       "message": "Whitelist / Blacklist"
    },

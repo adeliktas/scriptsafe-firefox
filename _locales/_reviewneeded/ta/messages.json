@@ -36,7 +36,7 @@
       "message": "தேவையற்ற உள்ளடக்கத்தை முறை:"
    },
    "annoyancesmodedesc": {
-      "description": "Relaxed = whitelisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if whitelisted",
+      "description": "Relaxed = allowlisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if allowlisted",
       "message": "தளர்வான = அனுமதி பட்டியலில்தான் களங்கள் தடுக்கப்படவில்லை முடியாது; அனுமதி பட்டியலில்தான் என்றால் தேவையற்ற டொமைன் பட்டியலில் கண்டிப்பு = களங்கள் கூட தடுக்கப்படும்"
    },
    "antisocialpopup": {
@@ -48,7 +48,7 @@
       "message": "சமூகவிரோத முறை:"
    },
    "antisocialdesc": {
-      "description": "always remove social widgets/buttons, even if whitelisted",
+      "description": "always remove social widgets/buttons, even if allowlisted",
       "message": "அனுமதி பட்டியலில்தான் என்றால் எப்போதும் சமூக விட்ஜெட்டுகளை / பொத்தான்கள், கூட நீக்க"
    },
    "antisocialdesc2": {
@@ -479,9 +479,9 @@
       "description": "-Off-",
       "message": "-Off-"
    },
-   "onlyunwhitelisted": {
-      "description": "Only on Unwhitelisted Domains",
-      "message": "ஒரே Unwhitelisted களங்களில்"
+   "onlyunallowlisted": {
+      "description": "Only on Unallowlisted Domains",
+      "message": "ஒரே Unallowlisted களங்களில்"
    },
    "options": {
       "description": "Options",
@@ -704,7 +704,7 @@
       "message": "நம்பிக்கை"
    },
    "uaspoofallow": {
-      "description": "Apply to whitelisted domains as well",
+      "description": "Apply to allowlisted domains as well",
       "message": "அத்துடன், அனுமதி பட்டியலில்தான் களங்கள் விண்ணப்பிக்க"
    },
    "updatedisable": {
@@ -803,39 +803,39 @@
       "description": "+ Whitelist",
       "message": "+ அனுமதிப்பட்டியல்"
    },
-   "blacklist": {
+   "denylist": {
       "description": "Blacklist",
       "message": "பிளாக்லிஸ்ட்"
    },
-   "whitelist": {
+   "allowlist": {
       "description": "Whitelist",
       "message": "அனுமதிப்பட்டியல்"
    },
-   "blacklisted": {
+   "denylisted": {
       "description": "Blacklisted",
       "message": "தடுப்புப்பட்டியலிடப்பட்ட"
    },
-   "whitelisted": {
+   "allowlisted": {
       "description": "Whitelisted",
       "message": "அனுமதிக்கப்பட்டவை"
    },
-   "blacklistlow": {
-      "description": "blacklist",
+   "denylistlow": {
+      "description": "denylist",
       "message": "கருப்புபட்டியலையோ"
    },
-   "whitelistlow": {
-      "description": "whitelist",
+   "allowlistlow": {
+      "description": "allowlist",
       "message": "அனுமதிப் பட்டியலை"
    },
-   "blacklistmove": {
+   "denylistmove": {
       "description": "Move to Blacklist",
       "message": "பிளாக்லிஸ்ட் நகர்த்து"
    },
-   "whitelistmove": {
+   "allowlistmove": {
       "description": "Move to Whitelist",
       "message": "அனுமதிப்பட்டியல் நகர்த்து"
    },
-   "whitelistblacklist": {
+   "allowlistdenylist": {
       "description": "Whitelist / Blacklist",
       "message": "அனுமதிப்பட்டியல் / பிளாக்லிஸ்ட்"
    },

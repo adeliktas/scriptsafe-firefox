@@ -36,7 +36,7 @@
       "message": "Uønsket Indhold Mode:"
    },
    "annoyancesmodedesc": {
-      "description": "Relaxed = whitelisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if whitelisted",
+      "description": "Relaxed = allowlisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if allowlisted",
       "message": "Afslappet = hvidlistede domæner, vil ikke blive blokeret; Strenge = domæner i den uønskede domænenavn liste vil blive blokeret, selvom hvidlistet"
    },
    "antisocialpopup": {
@@ -48,7 +48,7 @@
       "message": "Antisocial Mode:"
    },
    "antisocialdesc": {
-      "description": "always remove social widgets/buttons, even if whitelisted",
+      "description": "always remove social widgets/buttons, even if allowlisted",
       "message": "altid fjerne sociale widgets / knapper, selv om hvidlistet"
    },
    "antisocialdesc2": {
@@ -479,9 +479,9 @@
       "description": "-Off-",
       "message": "-Slukket-"
    },
-   "onlyunwhitelisted": {
-      "description": "Only on Unwhitelisted Domains",
-      "message": "Kun på Unwhitelisted Domæner"
+   "onlyunallowlisted": {
+      "description": "Only on Unallowlisted Domains",
+      "message": "Kun på Unallowlisted Domæner"
    },
    "options": {
       "description": "Options",
@@ -704,7 +704,7 @@
       "message": "tillid"
    },
    "uaspoofallow": {
-      "description": "Apply to whitelisted domains as well",
+      "description": "Apply to allowlisted domains as well",
       "message": "Anvend på hvidlistede domæner samt"
    },
    "updatedisable": {
@@ -803,39 +803,39 @@
       "description": "+ Whitelist",
       "message": "+ Whitelist"
    },
-   "blacklist": {
+   "denylist": {
       "description": "Blacklist",
       "message": "Blacklist"
    },
-   "whitelist": {
+   "allowlist": {
       "description": "Whitelist",
       "message": "Whitelist"
    },
-   "blacklisted": {
+   "denylisted": {
       "description": "Blacklisted",
       "message": "Sortlistet"
    },
-   "whitelisted": {
+   "allowlisted": {
       "description": "Whitelisted",
       "message": "Hvidlistet"
    },
-   "blacklistlow": {
-      "description": "blacklist",
+   "denylistlow": {
+      "description": "denylist",
       "message": "sortliste"
    },
-   "whitelistlow": {
-      "description": "whitelist",
-      "message": "whitelist"
+   "allowlistlow": {
+      "description": "allowlist",
+      "message": "allowlist"
    },
-   "blacklistmove": {
+   "denylistmove": {
       "description": "Move to Blacklist",
       "message": "Flyt til Blackliste"
    },
-   "whitelistmove": {
+   "allowlistmove": {
       "description": "Move to Whitelist",
       "message": "Flyt til Whitelist"
    },
-   "whitelistblacklist": {
+   "allowlistdenylist": {
       "description": "Whitelist / Blacklist",
       "message": "Whitelist / Blacklist"
    },

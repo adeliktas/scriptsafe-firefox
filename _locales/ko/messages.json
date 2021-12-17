@@ -36,7 +36,7 @@
       "message": "불필요한 콘텐츠 모드 :"
    },
    "annoyancesmodedesc": {
-      "description": "Relaxed = whitelisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if whitelisted",
+      "description": "Relaxed = allowlisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if allowlisted",
       "message": "Relaxed = 화이트리스트에 등록 된 도메인은 차단되지 않습니다; Strict = 화이트리스트에 등록 된 도메인이라도 차단됩니다."
    },
    "antisocialpopup": {
@@ -48,7 +48,7 @@
       "message": "SNS 차단 모드 :"
    },
    "antisocialdesc": {
-      "description": "always remove social widgets/buttons, even if whitelisted",
+      "description": "always remove social widgets/buttons, even if allowlisted",
       "message": "화이트리스트에 등록 된 경우라도 SNS 위젯 / 버튼은 항상 차단"
    },
    "antisocialdesc2": {
@@ -479,9 +479,9 @@
       "description": "-Off-",
       "message": "-끄기-"
    },
-   "onlyunwhitelisted": {
-      "description": "Only on Unwhitelisted Domains",
-      "message": "Unwhitelisted 도메인에서만"
+   "onlyunallowlisted": {
+      "description": "Only on Unallowlisted Domains",
+      "message": "Unallowlisted 도메인에서만"
    },
    "options": {
       "description": "Options",
@@ -704,7 +704,7 @@
       "message": "신뢰"
    },
    "uaspoofallow": {
-      "description": "Apply to whitelisted domains as well",
+      "description": "Apply to allowlisted domains as well",
       "message": "화이트리스트에 등록 된 도메인에 적용됩니다."
    },
    "updatedisable": {
@@ -803,39 +803,39 @@
       "description": "+ Whitelist",
       "message": "+ 화이트리스트"
    },
-   "blacklist": {
+   "denylist": {
       "description": "Blacklist",
       "message": "블랙리스트"
    },
-   "whitelist": {
+   "allowlist": {
       "description": "Whitelist",
       "message": "화이트리스트"
    },
-   "blacklisted": {
+   "denylisted": {
       "description": "Blacklisted",
       "message": "블랙리스트에 등록 됨"
    },
-   "whitelisted": {
+   "allowlisted": {
       "description": "Whitelisted",
       "message": "화이트리스트에 등록 됨"
    },
-   "blacklistlow": {
-      "description": "blacklist",
+   "denylistlow": {
+      "description": "denylist",
       "message": "블랙리스트"
    },
-   "whitelistlow": {
-      "description": "whitelist",
+   "allowlistlow": {
+      "description": "allowlist",
       "message": "화이트리스트"
    },
-   "blacklistmove": {
+   "denylistmove": {
       "description": "Move to Blacklist",
       "message": "블랙리스트로 이동"
    },
-   "whitelistmove": {
+   "allowlistmove": {
       "description": "Move to Whitelist",
       "message": "화이트리스트로 이동"
    },
-   "whitelistblacklist": {
+   "allowlistdenylist": {
       "description": "Whitelist / Blacklist",
       "message": "화이트리스트 / 블랙리스트"
    },

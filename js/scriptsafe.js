@@ -92,7 +92,7 @@ function mitigate(req) {
 						req.requestHeaders[i].value = '';
 					break;
 				case 'Referer':
-					if (localStorage['referrerspoof'] != 'off' && (localStorage['referrerspoofdenywhitelisted'] == 'true' || enabled(req.url) == 'true')) {
+					if (localStorage['referrerspoof'] != 'off' && (localStorage['referrerspoofdenyallowlisted'] == 'true' || enabled(req.url) == 'true')) {
 						if (localStorage['referrerspoof'] == 'same')
 							req.requestHeaders[i].value = req.url;
 						else if (localStorage['referrerspoof'] == 'domain')
@@ -478,7 +478,7 @@ function domainHandler(domain,action,listtype) {
 			var tempWhitelist = JSON.parse(sessionStorage['whiteList']);
 			var tempBlacklist = JSON.parse(sessionStorage['blackList']);
 		}
-		// Remove domain from whitelist and blacklist
+		// Remove domain from allowlist and denylist
 		var pos = tempWhitelist.indexOf(domain);
 		if (pos != -1) tempWhitelist.splice(pos,1);
 		pos = tempBlacklist.indexOf(domain);
@@ -692,7 +692,7 @@ function setDefaultOptions(force) {
 		"useragentintervalmins": "5",
 		"uaspoofallow": "false",
 		"referrerspoof": "off",
-		"referrerspoofdenywhitelisted": "false",
+		"referrerspoofdenyallowlisted": "false",
 		"cookies": "true",
 		"paranoia": "false",
 		"dataurl": "false",
@@ -902,7 +902,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 		for (var i in fpTypes) {
 			fpListStatus[fpTypes[i]] = enabledfp(extractedDomain, fpTypes[i]);
 		}
-		sendResponse({status: localStorage['enable'], enable: enabled(sender.tab.url), fp_canvas: fpListStatus['fpCanvas'], fp_canvasfont: fpListStatus['fpCanvasFont'], fp_audio: fpListStatus['fpAudio'], fp_webgl: fpListStatus['fpWebGL'], fp_battery: fpListStatus['fpBattery'], fp_device: fpListStatus['fpDevice'], fp_gamepad: fpListStatus['fpGamepad'], fp_webvr: fpListStatus['fpWebVR'], fp_bluetooth: fpListStatus['fpBluetooth'], fp_clientrectangles: fpListStatus['fpClientRectangles'], fp_clipboard: fpListStatus['fpClipboard'], fp_browserplugins: fpListStatus['fpBrowserPlugins'], experimental: experimental, mode: localStorage['mode'], annoyancesmode: localStorage['annoyancesmode'], antisocial: localStorage['antisocial'], whitelist: whiteList, blacklist: blackList, whitelistSession: sessionWhiteList, blackListSession: sessionBlackList, script: localStorage['script'], noscript: localStorage['noscript'], object: localStorage['object'], applet: localStorage['applet'], embed: localStorage['embed'], iframe: localStorage['iframe'], frame: localStorage['frame'], audio: localStorage['audio'], video: localStorage['video'], image: localStorage['image'], annoyances: localStorage['annoyances'], preservesamedomain: localStorage['preservesamedomain'], canvas: localStorage['canvas'], canvasfont: localStorage['canvasfont'], audioblock: localStorage['audioblock'], webgl: localStorage['webgl'], battery: localStorage['battery'], webrtcdevice: localStorage['webrtcdevice'], gamepad: localStorage['gamepad'], webvr: localStorage['webvr'], bluetooth: localStorage['bluetooth'], clientrects: localStorage['clientrects'], timezone: localStorage['timezone'], browserplugins: localStorage['browserplugins'], keyboard: localStorage['keyboard'], keydelta: localStorage['keydelta'], webbugs: localStorage['webbugs'], referrer: localStorage['referrer'], referrerspoofdenywhitelisted: localStorage['referrerspoofdenywhitelisted'], linktarget: localStorage['linktarget'], paranoia: localStorage['paranoia'], clipboard: localStorage['clipboard'], dataurl: localStorage['dataurl'], useragent: userAgent, uaspoofallow: localStorage['uaspoofallow']});
+		sendResponse({status: localStorage['enable'], enable: enabled(sender.tab.url), fp_canvas: fpListStatus['fpCanvas'], fp_canvasfont: fpListStatus['fpCanvasFont'], fp_audio: fpListStatus['fpAudio'], fp_webgl: fpListStatus['fpWebGL'], fp_battery: fpListStatus['fpBattery'], fp_device: fpListStatus['fpDevice'], fp_gamepad: fpListStatus['fpGamepad'], fp_webvr: fpListStatus['fpWebVR'], fp_bluetooth: fpListStatus['fpBluetooth'], fp_clientrectangles: fpListStatus['fpClientRectangles'], fp_clipboard: fpListStatus['fpClipboard'], fp_browserplugins: fpListStatus['fpBrowserPlugins'], experimental: experimental, mode: localStorage['mode'], annoyancesmode: localStorage['annoyancesmode'], antisocial: localStorage['antisocial'], allowlist: whiteList, denylist: blackList, allowlistSession: sessionWhiteList, blackListSession: sessionBlackList, script: localStorage['script'], noscript: localStorage['noscript'], object: localStorage['object'], applet: localStorage['applet'], embed: localStorage['embed'], iframe: localStorage['iframe'], frame: localStorage['frame'], audio: localStorage['audio'], video: localStorage['video'], image: localStorage['image'], annoyances: localStorage['annoyances'], preservesamedomain: localStorage['preservesamedomain'], canvas: localStorage['canvas'], canvasfont: localStorage['canvasfont'], audioblock: localStorage['audioblock'], webgl: localStorage['webgl'], battery: localStorage['battery'], webrtcdevice: localStorage['webrtcdevice'], gamepad: localStorage['gamepad'], webvr: localStorage['webvr'], bluetooth: localStorage['bluetooth'], clientrects: localStorage['clientrects'], timezone: localStorage['timezone'], browserplugins: localStorage['browserplugins'], keyboard: localStorage['keyboard'], keydelta: localStorage['keydelta'], webbugs: localStorage['webbugs'], referrer: localStorage['referrer'], referrerspoofdenyallowlisted: localStorage['referrerspoofdenyallowlisted'], linktarget: localStorage['linktarget'], paranoia: localStorage['paranoia'], clipboard: localStorage['clipboard'], dataurl: localStorage['dataurl'], useragent: userAgent, uaspoofallow: localStorage['uaspoofallow']});
 		if (typeof ITEMS[sender.tab.id] === 'undefined') {
 			resetTabData(sender.tab.id, sender.tab.url);
 		} else {
@@ -1328,7 +1328,7 @@ function listsSync() {
 				}
 			}
 		} else {
-			alert('Incomplete fingerprint whitelist data was detected. Very large lists are known to cause issues with syncing.\r\nAs a safety precaution, your fingerprint whitelist has not been updated and syncing has been disabled on this device to prevent overwriting data on other devices.\r\nPlease consider manually exporting your latest settings and importing it into your other devices from the Options page.');
+			alert('Incomplete fingerprint allowlist data was detected. Very large lists are known to cause issues with syncing.\r\nAs a safety precaution, your fingerprint allowlist has not been updated and syncing has been disabled on this device to prevent overwriting data on other devices.\r\nPlease consider manually exporting your latest settings and importing it into your other devices from the Options page.');
 			saveSetting('syncenable', 'false');
 		}
 		deleteSetting('fpCount');

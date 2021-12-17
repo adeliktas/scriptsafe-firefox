@@ -36,7 +36,7 @@
       "message": "Ανεπιθύμητα Λειτουργία Περιεχομένου:"
    },
    "annoyancesmodedesc": {
-      "description": "Relaxed = whitelisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if whitelisted",
+      "description": "Relaxed = allowlisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if allowlisted",
       "message": "Χαλαρή = στη λίστα επιτρεπόμενων τομέων δεν θα πρέπει να αποκλειστεί? Αυστηρή = πεδία στη λίστα τομέα ανεπιθύμητο θα πρέπει να αποκλειστεί ακόμη και αν στη λίστα επιτρεπόμενων"
    },
    "antisocialpopup": {
@@ -48,7 +48,7 @@
       "message": "Αντικοινωνική Λειτουργία:"
    },
    "antisocialdesc": {
-      "description": "always remove social widgets/buttons, even if whitelisted",
+      "description": "always remove social widgets/buttons, even if allowlisted",
       "message": "Πάντα αφαιρέστε την κοινωνική widgets / κουμπιά, ακόμη και αν στη λίστα επιτρεπόμενων"
    },
    "antisocialdesc2": {
@@ -479,9 +479,9 @@
       "description": "-Off-",
       "message": "-Εκτός-"
    },
-   "onlyunwhitelisted": {
-      "description": "Only on Unwhitelisted Domains",
-      "message": "Μόνο για Unwhitelisted Domains"
+   "onlyunallowlisted": {
+      "description": "Only on Unallowlisted Domains",
+      "message": "Μόνο για Unallowlisted Domains"
    },
    "options": {
       "description": "Options",
@@ -704,7 +704,7 @@
       "message": "εμπιστοσύνη"
    },
    "uaspoofallow": {
-      "description": "Apply to whitelisted domains as well",
+      "description": "Apply to allowlisted domains as well",
       "message": "Εφαρμογή σε λίστα επιτρεπόμενων τομέων, καθώς και"
    },
    "updatedisable": {
@@ -803,39 +803,39 @@
       "description": "+ Whitelist",
       "message": "+ Whitelist"
    },
-   "blacklist": {
+   "denylist": {
       "description": "Blacklist",
       "message": "Προγραφή"
    },
-   "whitelist": {
+   "allowlist": {
       "description": "Whitelist",
       "message": "Λευκή Λίστα"
    },
-   "blacklisted": {
+   "denylisted": {
       "description": "Blacklisted",
       "message": "μαύρη λίστα"
    },
-   "whitelisted": {
+   "allowlisted": {
       "description": "Whitelisted",
       "message": "στη λίστα επιτρεπόμενων"
    },
-   "blacklistlow": {
-      "description": "blacklist",
+   "denylistlow": {
+      "description": "denylist",
       "message": "προγραφή"
    },
-   "whitelistlow": {
-      "description": "whitelist",
+   "allowlistlow": {
+      "description": "allowlist",
       "message": "λευκή λίστα"
    },
-   "blacklistmove": {
+   "denylistmove": {
       "description": "Move to Blacklist",
       "message": "Μετακίνηση σε Μαύρη λίστα"
    },
-   "whitelistmove": {
+   "allowlistmove": {
       "description": "Move to Whitelist",
       "message": "Μετακίνηση στην Λευκή Λίστα"
    },
-   "whitelistblacklist": {
+   "allowlistdenylist": {
       "description": "Whitelist / Blacklist",
       "message": "Λευκή Λίστα / Μαύρη λίστα"
    },

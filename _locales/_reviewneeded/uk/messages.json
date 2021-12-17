@@ -36,7 +36,7 @@
       "message": "Небажаний контент Режим:"
    },
    "annoyancesmodedesc": {
-      "description": "Relaxed = whitelisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if whitelisted",
+      "description": "Relaxed = allowlisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if allowlisted",
       "message": "Ослаблений = Білий список доменів НЕ буде заблокований; Суворі = домени в списку небажаних домену буде заблокований, навіть якщо білий список"
    },
    "antisocialpopup": {
@@ -48,7 +48,7 @@
       "message": "Антисоціальна Режим:"
    },
    "antisocialdesc": {
-      "description": "always remove social widgets/buttons, even if whitelisted",
+      "description": "always remove social widgets/buttons, even if allowlisted",
       "message": "завжди видалити соціальні віджети / кнопки, навіть якщо білий список"
    },
    "antisocialdesc2": {
@@ -479,9 +479,9 @@
       "description": "-Off-",
       "message": "-OFF-"
    },
-   "onlyunwhitelisted": {
-      "description": "Only on Unwhitelisted Domains",
-      "message": "Тільки на Unwhitelisted Домени"
+   "onlyunallowlisted": {
+      "description": "Only on Unallowlisted Domains",
+      "message": "Тільки на Unallowlisted Домени"
    },
    "options": {
       "description": "Options",
@@ -704,7 +704,7 @@
       "message": "довіра"
    },
    "uaspoofallow": {
-      "description": "Apply to whitelisted domains as well",
+      "description": "Apply to allowlisted domains as well",
       "message": "Застосувати Білий список доменів, а також"
    },
    "updatedisable": {
@@ -803,39 +803,39 @@
       "description": "+ Whitelist",
       "message": "+ Whitelist"
    },
-   "blacklist": {
+   "denylist": {
       "description": "Blacklist",
       "message": "чорний список"
    },
-   "whitelist": {
+   "allowlist": {
       "description": "Whitelist",
       "message": "Whitelist"
    },
-   "blacklisted": {
+   "denylisted": {
       "description": "Blacklisted",
       "message": "блоковані"
    },
-   "whitelisted": {
+   "allowlisted": {
       "description": "Whitelisted",
       "message": "білий список"
    },
-   "blacklistlow": {
-      "description": "blacklist",
+   "denylistlow": {
+      "description": "denylist",
       "message": "чорний список"
    },
-   "whitelistlow": {
-      "description": "whitelist",
+   "allowlistlow": {
+      "description": "allowlist",
       "message": "білий список"
    },
-   "blacklistmove": {
+   "denylistmove": {
       "description": "Move to Blacklist",
       "message": "Перемістити в чорний список"
    },
-   "whitelistmove": {
+   "allowlistmove": {
       "description": "Move to Whitelist",
       "message": "Перемістити в білий список"
    },
-   "whitelistblacklist": {
+   "allowlistdenylist": {
       "description": "Whitelist / Blacklist",
       "message": "Білий список / Чорний список"
    },

@@ -36,7 +36,7 @@
       "message": "Хүсээгүй Агуулга Mode:"
    },
    "annoyancesmodedesc": {
-      "description": "Relaxed = whitelisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if whitelisted",
+      "description": "Relaxed = allowlisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if allowlisted",
       "message": "Тайван = жагсаасан домэйнууд хааж байх болно; тэр ч байтугай жагсаасан бол хүсээгүй домэйн жагсаалтад хатуу = домэйнууд хааж болно"
    },
    "antisocialpopup": {
@@ -48,7 +48,7 @@
       "message": "Antisocial Mode:"
    },
    "antisocialdesc": {
-      "description": "always remove social widgets/buttons, even if whitelisted",
+      "description": "always remove social widgets/buttons, even if allowlisted",
       "message": "үргэлж жагсаасан бол нийгмийн виджетийг / товч, тэр ч байтугай устгах"
    },
    "antisocialdesc2": {
@@ -479,9 +479,9 @@
       "description": "-Off-",
       "message": "-Off-"
    },
-   "onlyunwhitelisted": {
-      "description": "Only on Unwhitelisted Domains",
-      "message": "Зөвхөн Unwhitelisted домэйнд дээр"
+   "onlyunallowlisted": {
+      "description": "Only on Unallowlisted Domains",
+      "message": "Зөвхөн Unallowlisted домэйнд дээр"
    },
    "options": {
       "description": "Options",
@@ -704,7 +704,7 @@
       "message": "итгэлцэл"
    },
    "uaspoofallow": {
-      "description": "Apply to whitelisted domains as well",
+      "description": "Apply to allowlisted domains as well",
       "message": "мөн жагсаасан салбарт хэрэглэнэ"
    },
    "updatedisable": {
@@ -803,39 +803,39 @@
       "description": "+ Whitelist",
       "message": "+ Цагаан жагсаалтаар"
    },
-   "blacklist": {
+   "denylist": {
       "description": "Blacklist",
       "message": "Хар жагсаалт"
    },
-   "whitelist": {
+   "allowlist": {
       "description": "Whitelist",
       "message": "Цагаан жагсаалтаар"
    },
-   "blacklisted": {
+   "denylisted": {
       "description": "Blacklisted",
       "message": "хар дансанд"
    },
-   "whitelisted": {
+   "allowlisted": {
       "description": "Whitelisted",
       "message": "Зөвшөөрөгдсөн жагсаалтанд орсон"
    },
-   "blacklistlow": {
-      "description": "blacklist",
+   "denylistlow": {
+      "description": "denylist",
       "message": "Хар жагсаалт"
    },
-   "whitelistlow": {
-      "description": "whitelist",
+   "allowlistlow": {
+      "description": "allowlist",
       "message": "Цагаан жагсаалтаар"
    },
-   "blacklistmove": {
+   "denylistmove": {
       "description": "Move to Blacklist",
       "message": "Хар жагсаалт руу шилжих"
    },
-   "whitelistmove": {
+   "allowlistmove": {
       "description": "Move to Whitelist",
       "message": "Цагаан жагсаалтаар шилжих"
    },
-   "whitelistblacklist": {
+   "allowlistdenylist": {
       "description": "Whitelist / Blacklist",
       "message": "Цагаан жагсаалтаар / Хар жагсаалт"
    },

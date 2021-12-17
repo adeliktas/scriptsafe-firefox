@@ -36,7 +36,7 @@
       "message": "ناپسندیدہ مواد موڈ:"
    },
    "annoyancesmodedesc": {
-      "description": "Relaxed = whitelisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if whitelisted",
+      "description": "Relaxed = allowlisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if allowlisted",
       "message": "آرام دہ = وائٹ لسٹ ڈومینز بلاک نہیں کیا جائے گا؛ ناپسندیدہ ڈومین فہرست میں سخت = ڈومینز بھی وائٹ لسٹ تو بلاک کیا جائے گا"
    },
    "antisocialpopup": {
@@ -48,7 +48,7 @@
       "message": "اساماجک موڈ:"
    },
    "antisocialdesc": {
-      "description": "always remove social widgets/buttons, even if whitelisted",
+      "description": "always remove social widgets/buttons, even if allowlisted",
       "message": "ہمیشہ وائٹ لسٹ تو سماجی ویجٹ / بٹن، بھی ہٹا دیں"
    },
    "antisocialdesc2": {
@@ -479,9 +479,9 @@
       "description": "-Off-",
       "message": "-بند-"
    },
-   "onlyunwhitelisted": {
-      "description": "Only on Unwhitelisted Domains",
-      "message": "صرف Unwhitelisted ڈومینز پر"
+   "onlyunallowlisted": {
+      "description": "Only on Unallowlisted Domains",
+      "message": "صرف Unallowlisted ڈومینز پر"
    },
    "options": {
       "description": "Options",
@@ -704,7 +704,7 @@
       "message": "اعتماد"
    },
    "uaspoofallow": {
-      "description": "Apply to whitelisted domains as well",
+      "description": "Apply to allowlisted domains as well",
       "message": "اس کے ساتھ ساتھ وائٹ لسٹ ڈومینز پر لگائیں"
    },
    "updatedisable": {
@@ -803,39 +803,39 @@
       "description": "+ Whitelist",
       "message": "+ وائٹ لسٹ"
    },
-   "blacklist": {
+   "denylist": {
       "description": "Blacklist",
       "message": "بلیک لسٹ"
    },
-   "whitelist": {
+   "allowlist": {
       "description": "Whitelist",
       "message": "وائٹ لسٹ"
    },
-   "blacklisted": {
+   "denylisted": {
       "description": "Blacklisted",
       "message": "بلیک لسٹ"
    },
-   "whitelisted": {
+   "allowlisted": {
       "description": "Whitelisted",
       "message": "وائٹ لسٹ"
    },
-   "blacklistlow": {
-      "description": "blacklist",
+   "denylistlow": {
+      "description": "denylist",
       "message": "بلیک لسٹ"
    },
-   "whitelistlow": {
-      "description": "whitelist",
+   "allowlistlow": {
+      "description": "allowlist",
       "message": "وائٹ لسٹ"
    },
-   "blacklistmove": {
+   "denylistmove": {
       "description": "Move to Blacklist",
       "message": "بلیک لسٹ میں منتقل کریں"
    },
-   "whitelistmove": {
+   "allowlistmove": {
       "description": "Move to Whitelist",
       "message": "وائٹ لسٹ میں منتقل کریں"
    },
-   "whitelistblacklist": {
+   "allowlistdenylist": {
       "description": "Whitelist / Blacklist",
       "message": "وائٹ لسٹ / بلیک لسٹ"
    },

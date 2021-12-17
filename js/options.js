@@ -27,9 +27,9 @@ document.addEventListener('DOMContentLoaded', function () {
 		} 
 	});
 	$("#domainsort").click(domainsort);
-	$("#whitebind").click(whitelistlisten);
+	$("#whitebind").click(allowlistlisten);
 	$(".fpAdd").click(addFPList);
-	$("#blackbind").click(blacklistlisten);
+	$("#blackbind").click(denylistlisten);
 	$("#whiteclear").click(whiteclear);
 	$("#blackclear").click(blackclear);
 	$("#importwhite").click(importwhite);
@@ -197,8 +197,8 @@ function i18load() {
 	$("#whitebind").val(bkg.getLocale("whitebind"));
 	$("#blackbind").val(bkg.getLocale("blackbind"));
 	$("#domaininfo").val(bkg.getLocale("domaininfo"));
-	$(".i18_whitelist").html(bkg.getLocale("whitelist"));
-	$(".i18_blacklist").html(bkg.getLocale("blacklist"));
+	$(".i18_allowlist").html(bkg.getLocale("allowlist"));
+	$(".i18_denylist").html(bkg.getLocale("denylist"));
 	$("#blackclear, #whiteclear").html(bkg.getLocale("clearlow"));
 	$("#importwhite, #importblack").html(bkg.getLocale("bulkimport"));
 	$(".i18_bulkimportcap").html(bkg.getLocale("bulkimportcap"));
@@ -215,7 +215,7 @@ function i18load() {
 	$(".i18_strict").html(bkg.getLocale("strict"));
 	$(".i18_default_public_interface_only").html(bkg.getLocale("default_public_interface_only"));
 	$(".i18_disable_non_proxied_udp").html(bkg.getLocale("disable_non_proxied_udp"));
-	$(".i18_onlyunwhitelisted").html(bkg.getLocale("onlyunwhitelisted"));
+	$(".i18_onlyunallowlisted").html(bkg.getLocale("onlyunallowlisted"));
 	$(".i18_alldomains").html(bkg.getLocale("alldomains"));
 	$(".i18_random").html(bkg.getLocale("random"));
 	$(".i18_off").html(bkg.getLocale("off"));
@@ -226,8 +226,8 @@ function i18load() {
 	$(".i18_newtab").html(bkg.getLocale("newtab"));
 	$(".i18_strictsamedomain").html(bkg.getLocale("strictsamedomain"));
 	$(".i18_loosesamedomain").html(bkg.getLocale("loosesamedomain"));
-	$(".i18_whitelistmove").attr('title', bkg.getLocale("whitelistmove"));
-	$(".i18_blacklistmove").attr('title', bkg.getLocale("blacklistmove"));
+	$(".i18_allowlistmove").attr('title', bkg.getLocale("allowlistmove"));
+	$(".i18_denylistmove").attr('title', bkg.getLocale("denylistmove"));
 	$(".i18_domaintip").html(bkg.getLocale("domaintip"));
 	$(".topDomainAdd[data-mode='0']").html(bkg.getLocale("trust"));
 	$(".topDomainAdd[data-mode='1']").html(bkg.getLocale("distrust"));
@@ -235,7 +235,7 @@ function i18load() {
 	$("#menu_fingerprint").attr('rel', bkg.getLocale("fingerprintdesc")).html(bkg.getLocale("fingerprint"));
 	$("#menu_privacy").attr('rel', bkg.getLocale("privacy")).html(bkg.getLocale("privacy"));
 	$("#menu_behavior").attr('rel', bkg.getLocale("behavior")).html(bkg.getLocale("behavior"));
-	$("#menu_whitelistblacklist").attr('rel', bkg.getLocale("whitelistblacklist")).html(bkg.getLocale("whitelistblacklist"));
+	$("#menu_allowlistdenylist").attr('rel', bkg.getLocale("allowlistdenylist")).html(bkg.getLocale("allowlistdenylist"));
 	$("#menu_importexport").attr('rel', bkg.getLocale("importexport")).html(bkg.getLocale("importexport"));
 	$("#sectionname").html($('.list-group a.active').attr('rel'));
 }
@@ -262,8 +262,8 @@ function viewToggle(commit) {
 		$('#generalsettings .sectionheading').stickyScroll({ topBoundary: $("#generalsettings").offset().top, bottomBoundary: $("#fingerprintprotection").offset().top });
 		$('#fingerprintprotection .sectionheading').stickyScroll({ topBoundary: $("#fingerprintprotection").offset().top, bottomBoundary: $("#privacysettings").offset().top });
 		$('#privacysettings .sectionheading').stickyScroll({ topBoundary: $("#privacysettings").offset().top, bottomBoundary: $("#behaviorsettings").offset().top });
-		$('#behaviorsettings .sectionheading').stickyScroll({ topBoundary: $("#behaviorsettings").offset().top, bottomBoundary: $("#whitelistblacklist").offset().top });
-		$('#whitelistblacklist .sectionheading').stickyScroll({ topBoundary: $("#whitelistblacklist").offset().top, bottomBoundary: $("#whitelistblacklist").offset().top });
+		$('#behaviorsettings .sectionheading').stickyScroll({ topBoundary: $("#behaviorsettings").offset().top, bottomBoundary: $("#allowlistdenylist").offset().top });
+		$('#allowlistdenylist .sectionheading').stickyScroll({ topBoundary: $("#allowlistdenylist").offset().top, bottomBoundary: $("#allowlistdenylist").offset().top });
 	} else {
 		$("#viewtoggle").text(bkg.getLocale("listallsettings")).removeClass('btn-success').addClass('btn-info');
 		if (commit) bkg.saveSetting('optionslist', 'false');
@@ -312,10 +312,10 @@ function blackclear() {
 function closeOptions() {
 	window.open('', '_self', '');window.close();
 }
-function whitelistlisten() {
+function allowlistlisten() {
 	addList(0);
 }
-function blacklistlisten() {
+function denylistlisten() {
 	addList(1);
 }
 function domainsort() {
@@ -419,7 +419,7 @@ function loadOptions() {
 	}
 	if ($("#hashchecking").val() == 'off') $("#applytoallowhash").hide();
 	else $("#applytoallowhash").show();
-	loadCheckbox("referrerspoofdenywhitelisted");
+	loadCheckbox("referrerspoofdenyallowlisted");
 	if (localStorage['referrerspoof'] != 'same' && localStorage['referrerspoof'] != 'domain' && localStorage['referrerspoof'] != 'off') {
 		$("#referrerspoof").val('custom');
 		$("#customreferrer").show();
@@ -432,8 +432,8 @@ function loadOptions() {
 	else $(".useragentrandom").show();
 	if (localStorage['useragentinterval'] == 'interval') $("#useragentintervaloption").show();
 	else $("#useragentintervaloption").hide();
-	if ($("#referrerspoof").val() == 'off') $("#applyreferrerspoofdenywhitelisted").hide();
-	else $("#applyreferrerspoofdenywhitelisted").show();
+	if ($("#referrerspoof").val() == 'off') $("#applyreferrerspoofdenyallowlisted").hide();
+	else $("#applyreferrerspoofdenyallowlisted").show();
 	listUpdate();
 	fpListUpdate();
 }
@@ -508,7 +508,7 @@ function saveOptions() {
 	saveElement("useragentinterval");
 	saveElement("useragentintervalmins");
 	saveCheckbox("uaspoofallow");
-	saveCheckbox("referrerspoofdenywhitelisted");
+	saveCheckbox("referrerspoofdenyallowlisted");
 	if ($("#referrerspoof").val() != 'custom') {
 		saveElement("referrerspoof");
 		$("#customreferrer").hide();
@@ -537,8 +537,8 @@ function saveOptions() {
 	else $(".useragentrandom").show();
 	if (localStorage['useragentinterval'] == 'interval') $("#useragentintervaloption").show();
 	else $("#useragentintervaloption").hide();
-	if (localStorage['referrerspoof'] != 'off') $("#applyreferrerspoofdenywhitelisted").show();
-	else $("#applyreferrerspoofdenywhitelisted").hide();
+	if (localStorage['referrerspoof'] != 'off') $("#applyreferrerspoofdenyallowlisted").show();
+	else $("#applyreferrerspoofdenyallowlisted").hide();
 	updateExport();
 	bkg.refreshRequestTypes();
 	bkg.initWebRTC();
@@ -662,13 +662,13 @@ function addList(type) {
 				$('#url').val('');
 				syncstatus = bkg.freshSync();
 				if (syncstatus) {
-					notification([bkg.getLocale("whitelisted"),bkg.getLocale("blacklisted")][type]+' '+domain+' and syncing in 10 seconds.');
+					notification([bkg.getLocale("allowlisted"),bkg.getLocale("denylisted")][type]+' '+domain+' and syncing in 10 seconds.');
 				} else {
-					notification([bkg.getLocale("whitelisted"),bkg.getLocale("blacklisted")][type]+' '+domain+'.');
+					notification([bkg.getLocale("allowlisted"),bkg.getLocale("denylisted")][type]+' '+domain+'.');
 				}
 				listUpdate();
 			} else {
-				notification(domain+' not added as it already exists in the list or the entire domain has been '+[bkg.getLocale("whitelisted"),bkg.getLocale("blacklisted")][type]);
+				notification(domain+' not added as it already exists in the list or the entire domain has been '+[bkg.getLocale("allowlisted"),bkg.getLocale("denylisted")][type]);
 			}
 			$('#url').focus();
 		}
@@ -688,13 +688,13 @@ function addFPList() {
 			$('#'+elid+'url').val('');
 			syncstatus = bkg.freshSync();
 			if (syncstatus) {
-				notification(bkg.getLocale("whitelisted")+' '+domain+' and syncing in 10 seconds.');
+				notification(bkg.getLocale("allowlisted")+' '+domain+' and syncing in 10 seconds.');
 			} else {
-				notification(bkg.getLocale("whitelisted")+' '+domain+'.');
+				notification(bkg.getLocale("allowlisted")+' '+domain+'.');
 			}
 			fpListUpdate();
 		} else {
-			notification(domain+' not added as it already exists in the list or the entire domain has been '+bkg.getLocale("whitelisted"));
+			notification(domain+' not added as it already exists in the list or the entire domain has been '+bkg.getLocale("allowlisted"));
 		}
 		$('#'+elid+'url').focus();
 	}
@@ -721,16 +721,16 @@ function domainRemover(domain, type) {
 }
 function domainMove(domain, mode) {
 	var lingo;
-	if (mode == '0') lingo = bkg.getLocale("whitelistlow");
-	else if (mode == '1') lingo = bkg.getLocale("blacklistlow");
+	if (mode == '0') lingo = bkg.getLocale("allowlistlow");
+	else if (mode == '1') lingo = bkg.getLocale("denylistlow");
 	if (confirm("Are you sure you want to move "+domain+" to the "+lingo+"?")) {
 		bkg.domainHandler(domain, mode);
 		listUpdate();
 		syncstatus = bkg.freshSync();
 		if (syncstatus) {
-			notification([bkg.getLocale("whitelisted"),bkg.getLocale("blacklisted")][mode]+' '+domain+' and syncing in 10 seconds.');
+			notification([bkg.getLocale("allowlisted"),bkg.getLocale("denylisted")][mode]+' '+domain+' and syncing in 10 seconds.');
 		} else {
-			notification([bkg.getLocale("whitelisted"),bkg.getLocale("blacklisted")][mode]+' '+domain);
+			notification([bkg.getLocale("allowlisted"),bkg.getLocale("denylisted")][mode]+' '+domain);
 		}
 	}
 	return false;
@@ -763,14 +763,14 @@ function bulk(type) {
 			scrollTop: ($("#bulk").offset().top-55)
 		}, 'slow');
 	} else {
-		if ((type == '0' && $("#bulk strong").html() == bkg.getLocale("whitelist")+" "+bkg.getLocale("bulkimportcap")) || (type == '1' && $("#bulk strong").html() == bkg.getLocale("blacklist")+" "+bkg.getLocale("bulkimportcap"))) hidebulk();
+		if ((type == '0' && $("#bulk strong").html() == bkg.getLocale("allowlist")+" "+bkg.getLocale("bulkimportcap")) || (type == '1' && $("#bulk strong").html() == bkg.getLocale("denylist")+" "+bkg.getLocale("bulkimportcap"))) hidebulk();
 	}
 	$("#bulk textarea").focus();
 	if (type == '0') {
-		$("#bulk strong").html(bkg.getLocale("whitelist")+" "+bkg.getLocale("bulkimportcap"));
+		$("#bulk strong").html(bkg.getLocale("allowlist")+" "+bkg.getLocale("bulkimportcap"));
 		$("#bulkbtn").val(bkg.getLocale("whitebind")).click(importbulkwhite);
 	} else if (type == '1') {
-		$("#bulk strong").html(bkg.getLocale("blacklist")+" "+bkg.getLocale("bulkimportcap"));
+		$("#bulk strong").html(bkg.getLocale("denylist")+" "+bkg.getLocale("bulkimportcap"));
 		$("#bulkbtn").val(bkg.getLocale("blackbind")).click(importbulkblack);
 	}
 }
@@ -817,32 +817,32 @@ function importbulk(type) {
 function listUpdate() {
 	var whiteList = JSON.parse(localStorage['whiteList']);
 	var blackList = JSON.parse(localStorage['blackList']);
-	var whitelistCompiled = '';
-	var whitelistLength = whiteList.length;
-	if (whitelistLength==0) whitelistCompiled = '[currently empty]';
+	var allowlistCompiled = '';
+	var allowlistLength = whiteList.length;
+	if (allowlistLength==0) allowlistCompiled = '[currently empty]';
 	else {
 		if (localStorage['domainsort'] == 'true') whiteList = bkg.domainSort(whiteList);
 		else whiteList.sort();
 		for (var i in whiteList) {
-			if ((whiteList[i][0] == '*' && whiteList[i][1] == '*') || whiteList[i].match(/^(?:(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) || whiteList[i].match(/^(?:\[[A-Fa-f0-9:.]+\])(:[0-9]+)?$/g)) whitelistCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" class="domainMove i18_blacklistmove" title=\''+bkg.getLocale("blacklistmove")+'\' data-domain=\''+whiteList[i]+'\' data-mode="1"><span class="glyphicon glyphicon-retweet" aria-hidden="true"></span></a> | <a href="javascript:;" style="color:#f00;" class="domainRemover" rel=\''+whiteList[i]+'\'><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></div>'+whiteList[i]+'</div>';
-			else whitelistCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" style="color:green;" class="topDomainAdd" title=\''+bkg.getLocale("trust")+' '+whiteList[i]+'\' data-domain=\''+whiteList[i]+'\' data-mode="0">'+bkg.getLocale("trust")+'</a> | <a href="javascript:;" class="domainMove i18_blacklistmove" title=\''+bkg.getLocale("blacklistmove")+'\' data-domain=\''+whiteList[i]+'\' data-mode="1"><span class="glyphicon glyphicon-retweet" aria-hidden="true"></span></a> | <a href="javascript:;" style="color:#f00;" class="domainRemover" rel=\''+whiteList[i]+'\'><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></div>'+whiteList[i]+'</div>';
+			if ((whiteList[i][0] == '*' && whiteList[i][1] == '*') || whiteList[i].match(/^(?:(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) || whiteList[i].match(/^(?:\[[A-Fa-f0-9:.]+\])(:[0-9]+)?$/g)) allowlistCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" class="domainMove i18_denylistmove" title=\''+bkg.getLocale("denylistmove")+'\' data-domain=\''+whiteList[i]+'\' data-mode="1"><span class="glyphicon glyphicon-retweet" aria-hidden="true"></span></a> | <a href="javascript:;" style="color:#f00;" class="domainRemover" rel=\''+whiteList[i]+'\'><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></div>'+whiteList[i]+'</div>';
+			else allowlistCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" style="color:green;" class="topDomainAdd" title=\''+bkg.getLocale("trust")+' '+whiteList[i]+'\' data-domain=\''+whiteList[i]+'\' data-mode="0">'+bkg.getLocale("trust")+'</a> | <a href="javascript:;" class="domainMove i18_denylistmove" title=\''+bkg.getLocale("denylistmove")+'\' data-domain=\''+whiteList[i]+'\' data-mode="1"><span class="glyphicon glyphicon-retweet" aria-hidden="true"></span></a> | <a href="javascript:;" style="color:#f00;" class="domainRemover" rel=\''+whiteList[i]+'\'><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></div>'+whiteList[i]+'</div>';
 		}
 	}
-	var blacklistCompiled = '';
-	var blacklistLength = blackList.length;
-	if (blacklistLength==0) blacklistCompiled = '[currently empty]';
+	var denylistCompiled = '';
+	var denylistLength = blackList.length;
+	if (denylistLength==0) denylistCompiled = '[currently empty]';
 	else {
 		if (localStorage['domainsort'] == 'true') blackList = bkg.domainSort(blackList);
 		else blackList.sort();
 		for (var i in blackList) {
-			if ((blackList[i][0] == '*' &&  blackList[i][1] == '*') || blackList[i].match(/^(?:(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) || blackList[i].match(/^(?:\[[A-Fa-f0-9:.]+\])(:[0-9]+)?$/g)) blacklistCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" class="domainMove i18_whitelistmove" title=\''+bkg.getLocale("whitelistmove")+'\' data-domain=\''+blackList[i]+'\' data-mode="0"><span class="glyphicon glyphicon-retweet" aria-hidden="true"></span></a> | <a href="javascript:;" style="color:#f00;" class="domainRemover" rel=\''+blackList[i]+'\'><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></div>'+blackList[i]+'</div>';
-			else blacklistCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" style="color:green;" class="topDomainAdd" title=\''+bkg.getLocale("distrust")+' '+blackList[i]+'\' data-domain=\''+blackList[i]+'\' data-mode="1">'+bkg.getLocale("distrust")+'</a> | <a href="javascript:;" class="domainMove i18_whitelistmove" title=\''+bkg.getLocale("whitelistmove")+'\' data-domain=\''+blackList[i]+'\' data-mode="0"><span class="glyphicon glyphicon-retweet" aria-hidden="true"></span></a> | <a href="javascript:;" style="color:#f00;" class="domainRemover" rel=\''+blackList[i]+'\'><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></div>'+blackList[i]+'</div>';
+			if ((blackList[i][0] == '*' &&  blackList[i][1] == '*') || blackList[i].match(/^(?:(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) || blackList[i].match(/^(?:\[[A-Fa-f0-9:.]+\])(:[0-9]+)?$/g)) denylistCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" class="domainMove i18_allowlistmove" title=\''+bkg.getLocale("allowlistmove")+'\' data-domain=\''+blackList[i]+'\' data-mode="0"><span class="glyphicon glyphicon-retweet" aria-hidden="true"></span></a> | <a href="javascript:;" style="color:#f00;" class="domainRemover" rel=\''+blackList[i]+'\'><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></div>'+blackList[i]+'</div>';
+			else denylistCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" style="color:green;" class="topDomainAdd" title=\''+bkg.getLocale("distrust")+' '+blackList[i]+'\' data-domain=\''+blackList[i]+'\' data-mode="1">'+bkg.getLocale("distrust")+'</a> | <a href="javascript:;" class="domainMove i18_allowlistmove" title=\''+bkg.getLocale("allowlistmove")+'\' data-domain=\''+blackList[i]+'\' data-mode="0"><span class="glyphicon glyphicon-retweet" aria-hidden="true"></span></a> | <a href="javascript:;" style="color:#f00;" class="domainRemover" rel=\''+blackList[i]+'\'><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></div>'+blackList[i]+'</div>';
 		}
 	}
-	$('#whitelist').html(whitelistCompiled);
-	$('#blacklist').html(blacklistCompiled);
-	$('#whitelistcount').html(whitelistLength);
-	$('#blacklistcount').html(blacklistLength);
+	$('#allowlist').html(allowlistCompiled);
+	$('#denylist').html(denylistCompiled);
+	$('#allowlistcount').html(allowlistLength);
+	$('#denylistcount').html(denylistLength);
 	$(".domainRemover, .topDomainAdd, .domainMove").unbind('click');
 	$(".domainRemover").click(function() { domainRemover($(this).attr('rel'));});
 	$(".topDomainAdd").click(function() { topDomainAdd($(this).attr('data-domain'), $(this).attr('data-mode'));});
@@ -876,7 +876,7 @@ function fpListProcess(fpType) {
 	$('#'+fpType+'count').html(fpListLength);
 }
 function listclear(type) {
-	if (confirm(['Clear whitelist?','Clear blacklist?'][type])) {
+	if (confirm(['Clear allowlist?','Clear denylist?'][type])) {
 		bkg.saveSetting(['whiteList','blackList'][type], JSON.stringify([]));
 		listUpdate();
 		bkg.cacheLists();

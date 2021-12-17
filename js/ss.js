@@ -63,9 +63,9 @@ chrome.runtime.sendMessage({reqtype: "get-settings", iframe: iframe}, function(r
 		SETTINGS['ANNOYANCES'] = response.annoyances;
 		SETTINGS['ANNOYANCESMODE'] = response.annoyancesmode;
 		SETTINGS['ANTISOCIAL'] = response.antisocial;
-		SETTINGS['WHITELIST'] = response.whitelist;
-		SETTINGS['BLACKLIST'] = response.blacklist;	
-		SETTINGS['WHITELISTSESSION'] = response.whitelistSession;
+		SETTINGS['WHITELIST'] = response.allowlist;
+		SETTINGS['BLACKLIST'] = response.denylist;	
+		SETTINGS['WHITELISTSESSION'] = response.allowlistSession;
 		SETTINGS['BLACKLISTSESSION'] = response.blackListSession;
 		SETTINGS['SCRIPT'] = response.script;
 		SETTINGS['PRESERVESAMEDOMAIN'] = response.preservesamedomain;
@@ -116,7 +116,7 @@ chrome.runtime.sendMessage({reqtype: "get-settings", iframe: iframe}, function(r
 		if (SETTINGS['LINKTARGET'] == 'same') linktrgt = '_self';
 		else if (SETTINGS['LINKTARGET'] == 'new') linktrgt = '_blank';
 		SETTINGS['REFERRER'] = response.referrer;
-		SETTINGS['REFERRERSPOOFDENYWHITELISTED'] = response.referrerspoofdenywhitelisted;
+		SETTINGS['REFERRERSPOOFDENYWHITELISTED'] = response.referrerspoofdenyallowlisted;
 		SETTINGS['PARANOIA'] = response.paranoia;
 		SETTINGS['USERAGENT'] = response.useragent;
 		if (SETTINGS['USERAGENT'] != '' && (response.uaspoofallow == 'true' || SETTINGS['DOMAINSTATUS'] != '0')) {

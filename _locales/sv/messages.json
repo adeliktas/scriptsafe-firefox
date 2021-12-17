@@ -36,7 +36,7 @@
       "message": "Oönskat Innehåll-läge:"
    },
    "annoyancesmodedesc": {
-      "description": "Relaxed = whitelisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if whitelisted",
+      "description": "Relaxed = allowlisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if allowlisted",
       "message": "Enkel = godkända domäner inte kommer att blockeras; Strikt = domäner i listan oönskade domänen kommer att blockeras, även om de är vitlistade"
    },
    "antisocialpopup": {
@@ -48,7 +48,7 @@
       "message": "Antisocial-läge:"
    },
    "antisocialdesc": {
-      "description": "always remove social widgets/buttons, even if whitelisted",
+      "description": "always remove social widgets/buttons, even if allowlisted",
       "message": "Ta alltid bort sociala knappar, även om de är vitlistade"
    },
    "antisocialdesc2": {
@@ -479,8 +479,8 @@
       "description": "-Off-",
       "message": "-Av-"
    },
-   "onlyunwhitelisted": {
-      "description": "Only on Unwhitelisted Domains",
+   "onlyunallowlisted": {
+      "description": "Only on Unallowlisted Domains",
       "message": "Endast på svartlistade domäner"
    },
    "options": {
@@ -704,7 +704,7 @@
       "message": "lita på"
    },
    "uaspoofallow": {
-      "description": "Apply to whitelisted domains as well",
+      "description": "Apply to allowlisted domains as well",
       "message": "Applicera på godkända domäner också"
    },
    "updatedisable": {
@@ -803,39 +803,39 @@
       "description": "+ Whitelist",
       "message": "+ Vitlista"
    },
-   "blacklist": {
+   "denylist": {
       "description": "Blacklist",
       "message": "Svartlista"
    },
-   "whitelist": {
+   "allowlist": {
       "description": "Whitelist",
       "message": "Vitlista"
    },
-   "blacklisted": {
+   "denylisted": {
       "description": "Blacklisted",
       "message": "Svartlistad"
    },
-   "whitelisted": {
+   "allowlisted": {
       "description": "Whitelisted",
       "message": "Vitlistad"
    },
-   "blacklistlow": {
-      "description": "blacklist",
+   "denylistlow": {
+      "description": "denylist",
       "message": "svartlista"
    },
-   "whitelistlow": {
-      "description": "whitelist",
+   "allowlistlow": {
+      "description": "allowlist",
       "message": "vitlista"
    },
-   "blacklistmove": {
+   "denylistmove": {
       "description": "Move to Blacklist",
       "message": "Flytta till Svartlista"
    },
-   "whitelistmove": {
+   "allowlistmove": {
       "description": "Move to Whitelist",
       "message": "Flytta till Vitlista"
    },
-   "whitelistblacklist": {
+   "allowlistdenylist": {
       "description": "Whitelist / Blacklist",
       "message": "Whitelist / Svartlista"
    },
