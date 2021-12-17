@@ -54,7 +54,7 @@ function truncate(str, len) {
 document.addEventListener('DOMContentLoaded', function () {
 	$("#pop_ay").mouseup(function(e) { if (e.which != 3) openTab('https://twitter.com/andryou'); });
 	$("#pop_docs").mouseup(function(e) { if (e.which != 3) openTab('https://www.andryou.com/scriptsafe/'); });
-	$("#pop_project").mouseup(function(e) { if (e.which != 3) openTab('https://github.com/andryou/scriptsafe/tree/firefox'); });
+	$("#pop_project").mouseup(function(e) { if (e.which != 3) openTab('https://github.com/adeliktas/scriptsafe-firefox'); });
 	$("#pop_options").mouseup(function(e) { if (e.which != 3) openTab(chrome.extension.getURL('html/options.html')); });
 	$("#pop_log").mouseup(function(e) { if (e.which != 3) openTab(chrome.extension.getURL('html/recents.html')); });
 	$("#pop_webstore").mouseup(function(e) { if (e.which != 3) openTab('https://addons.mozilla.org/firefox/addon/script-safe/'); });
