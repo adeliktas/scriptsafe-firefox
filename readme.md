@@ -8,7 +8,9 @@ Support for other browsers such as chrome or opera will possibly be added in 202
 
 
 ## Installation
-### Packaging
+**https://addons.mozilla.org/de/firefox/addon/scriptsafe-ff/**
+
+### Packaging (Debug - Development)
 **https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Your_first_WebExtension**
 
 zip -r -FS ../scriptsafe.xpi * --exclude '*.git*'
