@@ -43,7 +43,7 @@
    },
    "applications": {
       "gecko": {
-        "id": "adeliktas@web.de",
+        "id": "scriptsafe@github.test",
         "strict_min_version": "57.0"
       }
    },

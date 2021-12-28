@@ -1055,7 +1055,7 @@ function genContextMenu() {
 	chrome.contextMenus.create({"title": getLocale("revoketemp"), "parentId": parent, "onclick": removeTempPage});
 	chrome.contextMenus.create({"title": getLocale("revoketempall"), "parentId": parent, "onclick": removeTempAll});
 	chrome.contextMenus.create({"parentId": parent, "type": "separator"});
-	chrome.contextMenus.create({"title": getLocale("options"), "parentId": parent, "onclick": function() { chrome.tabs.create({ url: chrome.extension.getURL('html/options.html')}); }});
+	chrome.contextMenus.create({"title": getLocale("options"), "parentId": parent, "onclick": function() { chrome.tabs.create({ url: chrome.runtime.getURL('html/options.html')}); }});
 	if (localStorage["enable"] == "false") chrome.contextMenus.create({"title": getLocale("enabless"), "parentId": parent, "onclick": function() { saveSetting('enable', "true"); contextHandle('toggle'); }});
 	else chrome.contextMenus.create({"title": getLocale("disable"), "parentId": parent, "onclick": function() { saveSetting('enable', "false"); contextHandle('toggle'); }});
 }
@@ -1231,8 +1231,8 @@ function freshSync(force) {
 				clearStorage.then(function() {
 					var syncStatus = browser.storage.sync.set(settingssync);
 					syncStatus.then(function() {
-						if (chrome.extension.lastError){
-							alert(chrome.extension.lastError.message);
+						if (chrome.runtime.lastError){
+							alert(chrome.runtime.lastError.message);
 						} else {
 							if (localStorage['syncnotify'] == 'true') chrome.notifications.create('syncnotify', {'type': 'basic', 'iconUrl': '../img/icon48.png', 'title': 'ScriptSafe - '+getLocale("exportsuccesstitle"), 'message': getLocale("exportsuccess")}, function(callback) { return true; } );
 						}
@@ -1438,7 +1438,7 @@ function cacheFpLists() {
 	}
 }
 function initLang(lang, mode) {
-	var url = chrome.extension.getURL('_locales/' + lang + '/messages.json');
+	var url = chrome.runtime.getURL('_locales/' + lang + '/messages.json');
 	$.ajax({
 		url: url,
 		dataType: 'json',
@@ -1482,7 +1482,7 @@ storageData.then(function(data) {
 function postLangLoad() {
 	if (!optionExists("version") || localStorage["version"] != version) {
 		if (localStorage["updatenotify"] == "true") {
-			chrome.tabs.create({ url: chrome.extension.getURL('html/updated.html')});
+			chrome.tabs.create({ url: chrome.runtime.getURL('html/updated.html')});
 		}
 		saveSetting('version', version);
 	}
