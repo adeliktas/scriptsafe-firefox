@@ -37,7 +37,7 @@
    },
    "annoyancesmodedesc": {
       "description": "Relaxed = allowlisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if allowlisted",
-      "message": "Entspannt = geallowlistete Domains werden nicht blockiert; Strikt = Domainn in der unerwünschte Domainnliste werden auch blockiert, selbst wenn sie per Whitelist zugelassen wurden."
+      "message": "Entspannt = geallowlistete Domains werden nicht blockiert; Strikt = Domainn in der unerwünschte Domainnliste werden auch blockiert, selbst wenn sie per allowlist zugelassen wurden."
    },
    "antisocialpopup": {
       "description": "Antisocial",
@@ -49,7 +49,7 @@
    },
    "antisocialdesc": {
       "description": "always remove social widgets/buttons, even if allowlisted",
-      "message": "Entferne immer soziale Widgets / Buttons, sogar wenn sie per Whitelist zugelassen wurden"
+      "message": "Entferne immer soziale Widgets / Buttons, sogar wenn sie per allowlist zugelassen wurden"
    },
    "antisocialdesc2": {
       "description": "For more comprehensive blocking, check out <a href=https://addons.mozilla.org/firefox/addon/privacy-badger17/ target=_blank>Privacy Badger</a>, <a href=https://addons.mozilla.org/firefox/addon/disconnect/ target=_blank>Disconnect</a>, <a href=https://addons.mozilla.org/firefox/addon/donottrackplus/ target=_blank>Blur</a>, and/or <a href=https://addons.mozilla.org/firefox/addon/ublock-origin/ target=_blank>uBlock Origin</a> with all of the subscription lists on the <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy site</a>",
@@ -481,7 +481,7 @@
    },
    "onlyunallowlisted": {
       "description": "Only on Unallowlisted Domains",
-      "message": "Nur auf nicht per Whitelist freigegebenen Domains"
+      "message": "Nur auf nicht per allowlist freigegebenen Domains"
    },
    "options": {
       "description": "Options",
@@ -705,7 +705,7 @@
    },
    "uaspoofallow": {
       "description": "Apply to allowlisted domains as well",
-      "message": "Auch auf per Whitelist freigegebene Domains anwenden"
+      "message": "Auch auf per allowlist freigegebene Domains anwenden"
    },
    "updatedisable": {
       "description": "Are you sure you want to disable any future update notifications like this one from appearing?\r\nYou can always re-allow update notifications by going to the ScriptSafe Options page and ticking the box beside Show Update Popup.",
@@ -796,28 +796,28 @@
       "message": "Verhindert, dass Geräte über das WebVR API erkannt werden"
    },
    "blackbind": {
-      "description": "+ Blacklist",
-      "message": "+ Blacklist"
+      "description": "+ denylist",
+      "message": "+ denylist"
    },
    "whitebind": {
-      "description": "+ Whitelist",
-      "message": "+ Whitelist"
+      "description": "+ allowlist",
+      "message": "+ allowlist"
    },
    "denylist": {
-      "description": "Blacklist",
-      "message": "Blacklist"
+      "description": "denylist",
+      "message": "denylist"
    },
    "allowlist": {
-      "description": "Whitelist",
-      "message": "Whitelist"
+      "description": "allowlist",
+      "message": "allowlist"
    },
    "denylisted": {
-      "description": "Blacklisted",
-      "message": "Auf die Blacklist gesetzt"
+      "description": "denylisted",
+      "message": "Auf die denylist gesetzt"
    },
    "allowlisted": {
-      "description": "Whitelisted",
-      "message": "Auf die Whitelist gesetzt"
+      "description": "allowlisted",
+      "message": "Auf die allowlist gesetzt"
    },
    "denylistlow": {
       "description": "denylist",
@@ -828,16 +828,16 @@
       "message": "allowlist"
    },
    "denylistmove": {
-      "description": "Move to Blacklist",
-      "message": "Zur Blacklist hinzufügen"
+      "description": "Move to denylist",
+      "message": "Zur denylist hinzufügen"
    },
    "allowlistmove": {
-      "description": "Move to Whitelist",
-      "message": "Zur Whitelist hinzufügen"
+      "description": "Move to allowlist",
+      "message": "Zur allowlist hinzufügen"
    },
    "allowlistdenylist": {
-      "description": "Whitelist / Blacklist",
-      "message": "White- / Blackliste"
+      "description": "allowlist / denylist",
+      "message": "White- / denyliste"
    },
    "xml": {
       "description": "XML HTTP Request Handling:",

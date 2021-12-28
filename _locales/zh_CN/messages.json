@@ -796,27 +796,27 @@
       "message": "禁止调用WebVR API以检测硬件设备"
    },
    "blackbind": {
-      "description": "+ Blacklist",
+      "description": "+ denylist",
       "message": "添加到黑名单"
    },
    "whitebind": {
-      "description": "+ Whitelist",
+      "description": "+ allowlist",
       "message": "添加到白名单"
    },
    "denylist": {
-      "description": "Blacklist",
+      "description": "denylist",
       "message": "黑名单"
    },
    "allowlist": {
-      "description": "Whitelist",
+      "description": "allowlist",
       "message": "白名单"
    },
    "denylisted": {
-      "description": "Blacklisted",
+      "description": "denylisted",
       "message": "被阻挡名单"
    },
    "allowlisted": {
-      "description": "Whitelisted",
+      "description": "allowlisted",
       "message": "被允许名单"
    },
    "denylistlow": {
@@ -828,15 +828,15 @@
       "message": "白名单"
    },
    "denylistmove": {
-      "description": "Move to Blacklist",
+      "description": "Move to denylist",
       "message": "移入黑名单"
    },
    "allowlistmove": {
-      "description": "Move to Whitelist",
+      "description": "Move to allowlist",
       "message": "移入白名单"
    },
    "allowlistdenylist": {
-      "description": "Whitelist / Blacklist",
+      "description": "allowlist / denylist",
       "message": "白名单/黑名单"
    },
    "xml": {

@@ -1,8 +1,8 @@
 // ScriptSafe - Copyright (C) andryou
 // Distributed under the terms of the GNU General Public License
-// The GNU General Public License can be found in the gpl.txt file. Alternatively, see <http://www.gnu.org/licenses/>.
+// The GNU General Public License can be found in the LICENSE file. Alternatively, see <http://www.gnu.org/licenses/>.
 'use strict';
-var version = '1.0.9.8';
+var version = '1.1.0.1';
 var bkg = chrome.extension.getBackgroundPage();
 var settingnames = [];
 var syncstatus;
@@ -579,10 +579,10 @@ function settingsImport() {
 			if ($.trim(v) != "") {
 				var settingentry = $.trim(v).split("|");
 				if (settingnames.indexOf($.trim(settingentry[0])) != -1 && ($.trim(settingentry[1]) != '' || $.trim(settingentry[0]) == 'useragent')) {
-					if ($.trim(settingentry[0]) == 'whiteList' || $.trim(settingentry[0]) == 'blackList' || $.trim(settingentry[0]) == 'useragent') {
+					if ($.trim(settingentry[0]) == 'allowlist' || $.trim(settingentry[0]) == 'denylist' || $.trim(settingentry[0]) == 'useragent') {
 						var listarray = $.trim(settingentry[1]).replace(/(\[|\]|")/g,"").split(",");
-						if ($.trim(settingentry[0]) == 'whiteList' && listarray.toString() != '') bkg.saveSetting('whiteList', JSON.stringify(listarray));
-						else if ($.trim(settingentry[0]) == 'blackList' && listarray.toString() != '') bkg.saveSetting('blackList', JSON.stringify(listarray));
+						if ($.trim(settingentry[0]) == 'allowlist' && listarray.toString() != '') bkg.saveSetting('allowlist', JSON.stringify(listarray));
+						else if ($.trim(settingentry[0]) == 'denylist' && listarray.toString() != '') bkg.saveSetting('denylist', JSON.stringify(listarray));
 						else if ($.trim(settingentry[0]) == 'useragent' && listarray.toString() != '') bkg.saveSetting('useragent', JSON.stringify(listarray));
 					} else 
 						bkg.saveSetting($.trim(settingentry[0]), $.trim(settingentry[1]));
@@ -632,7 +632,7 @@ function updateExport() {
 	$("#settingsexport").val("");
 	for (var i in localStorage) {
 		if (localStorage.hasOwnProperty(i)) {
-			if (i != "version" && i != "tempregexflag" && i != "whiteListCount" && i != "blackListCount" && i != "whiteListCount2" && i != "blackListCount2" && i.substr(0, 2) != "zb" && i.substr(0, 2) != "zw" && i.substr(0, 2) != "sb" && i.substr(0, 2) != "sw" && i.substr(0, 2) != "sf") {
+			if (i != "version" && i != "tempregexflag" && i != "allowlistCount" && i != "denylistCount" && i != "allowlistCount2" && i != "denylistCount2" && i.substr(0, 2) != "zb" && i.substr(0, 2) != "zw" && i.substr(0, 2) != "sb" && i.substr(0, 2) != "sw" && i.substr(0, 2) != "sf") {
 				settingnames.push(i);
 				$("#settingsexport").val($("#settingsexport").val()+i+"|"+localStorage[i]+"\n");
 			}
@@ -815,28 +815,28 @@ function importbulk(type) {
 	}
 }
 function listUpdate() {
-	var whiteList = JSON.parse(localStorage['whiteList']);
-	var blackList = JSON.parse(localStorage['blackList']);
+	var allowlist = JSON.parse(localStorage['allowlist']);
+	var denylist = JSON.parse(localStorage['denylist']);
 	var allowlistCompiled = '';
-	var allowlistLength = whiteList.length;
+	var allowlistLength = allowlist.length;
 	if (allowlistLength==0) allowlistCompiled = '[currently empty]';
 	else {
-		if (localStorage['domainsort'] == 'true') whiteList = bkg.domainSort(whiteList);
-		else whiteList.sort();
-		for (var i in whiteList) {
-			if ((whiteList[i][0] == '*' && whiteList[i][1] == '*') || whiteList[i].match(/^(?:(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) || whiteList[i].match(/^(?:\[[A-Fa-f0-9:.]+\])(:[0-9]+)?$/g)) allowlistCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" class="domainMove i18_denylistmove" title=\''+bkg.getLocale("denylistmove")+'\' data-domain=\''+whiteList[i]+'\' data-mode="1"><span class="glyphicon glyphicon-retweet" aria-hidden="true"></span></a> | <a href="javascript:;" style="color:#f00;" class="domainRemover" rel=\''+whiteList[i]+'\'><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></div>'+whiteList[i]+'</div>';
-			else allowlistCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" style="color:green;" class="topDomainAdd" title=\''+bkg.getLocale("trust")+' '+whiteList[i]+'\' data-domain=\''+whiteList[i]+'\' data-mode="0">'+bkg.getLocale("trust")+'</a> | <a href="javascript:;" class="domainMove i18_denylistmove" title=\''+bkg.getLocale("denylistmove")+'\' data-domain=\''+whiteList[i]+'\' data-mode="1"><span class="glyphicon glyphicon-retweet" aria-hidden="true"></span></a> | <a href="javascript:;" style="color:#f00;" class="domainRemover" rel=\''+whiteList[i]+'\'><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></div>'+whiteList[i]+'</div>';
+		if (localStorage['domainsort'] == 'true') allowlist = bkg.domainSort(allowlist);
+		else allowlist.sort();
+		for (var i in allowlist) {
+			if ((allowlist[i][0] == '*' && allowlist[i][1] == '*') || allowlist[i].match(/^(?:(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) || allowlist[i].match(/^(?:\[[A-Fa-f0-9:.]+\])(:[0-9]+)?$/g)) allowlistCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" class="domainMove i18_denylistmove" title=\''+bkg.getLocale("denylistmove")+'\' data-domain=\''+allowlist[i]+'\' data-mode="1"><span class="glyphicon glyphicon-retweet" aria-hidden="true"></span></a> | <a href="javascript:;" style="color:#f00;" class="domainRemover" rel=\''+allowlist[i]+'\'><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></div>'+allowlist[i]+'</div>';
+			else allowlistCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" style="color:green;" class="topDomainAdd" title=\''+bkg.getLocale("trust")+' '+allowlist[i]+'\' data-domain=\''+allowlist[i]+'\' data-mode="0">'+bkg.getLocale("trust")+'</a> | <a href="javascript:;" class="domainMove i18_denylistmove" title=\''+bkg.getLocale("denylistmove")+'\' data-domain=\''+allowlist[i]+'\' data-mode="1"><span class="glyphicon glyphicon-retweet" aria-hidden="true"></span></a> | <a href="javascript:;" style="color:#f00;" class="domainRemover" rel=\''+allowlist[i]+'\'><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></div>'+allowlist[i]+'</div>';
 		}
 	}
 	var denylistCompiled = '';
-	var denylistLength = blackList.length;
+	var denylistLength = denylist.length;
 	if (denylistLength==0) denylistCompiled = '[currently empty]';
 	else {
-		if (localStorage['domainsort'] == 'true') blackList = bkg.domainSort(blackList);
-		else blackList.sort();
-		for (var i in blackList) {
-			if ((blackList[i][0] == '*' &&  blackList[i][1] == '*') || blackList[i].match(/^(?:(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) || blackList[i].match(/^(?:\[[A-Fa-f0-9:.]+\])(:[0-9]+)?$/g)) denylistCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" class="domainMove i18_allowlistmove" title=\''+bkg.getLocale("allowlistmove")+'\' data-domain=\''+blackList[i]+'\' data-mode="0"><span class="glyphicon glyphicon-retweet" aria-hidden="true"></span></a> | <a href="javascript:;" style="color:#f00;" class="domainRemover" rel=\''+blackList[i]+'\'><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></div>'+blackList[i]+'</div>';
-			else denylistCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" style="color:green;" class="topDomainAdd" title=\''+bkg.getLocale("distrust")+' '+blackList[i]+'\' data-domain=\''+blackList[i]+'\' data-mode="1">'+bkg.getLocale("distrust")+'</a> | <a href="javascript:;" class="domainMove i18_allowlistmove" title=\''+bkg.getLocale("allowlistmove")+'\' data-domain=\''+blackList[i]+'\' data-mode="0"><span class="glyphicon glyphicon-retweet" aria-hidden="true"></span></a> | <a href="javascript:;" style="color:#f00;" class="domainRemover" rel=\''+blackList[i]+'\'><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></div>'+blackList[i]+'</div>';
+		if (localStorage['domainsort'] == 'true') denylist = bkg.domainSort(denylist);
+		else denylist.sort();
+		for (var i in denylist) {
+			if ((denylist[i][0] == '*' &&  denylist[i][1] == '*') || denylist[i].match(/^(?:(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) || denylist[i].match(/^(?:\[[A-Fa-f0-9:.]+\])(:[0-9]+)?$/g)) denylistCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" class="domainMove i18_allowlistmove" title=\''+bkg.getLocale("allowlistmove")+'\' data-domain=\''+denylist[i]+'\' data-mode="0"><span class="glyphicon glyphicon-retweet" aria-hidden="true"></span></a> | <a href="javascript:;" style="color:#f00;" class="domainRemover" rel=\''+denylist[i]+'\'><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></div>'+denylist[i]+'</div>';
+			else denylistCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" style="color:green;" class="topDomainAdd" title=\''+bkg.getLocale("distrust")+' '+denylist[i]+'\' data-domain=\''+denylist[i]+'\' data-mode="1">'+bkg.getLocale("distrust")+'</a> | <a href="javascript:;" class="domainMove i18_allowlistmove" title=\''+bkg.getLocale("allowlistmove")+'\' data-domain=\''+denylist[i]+'\' data-mode="0"><span class="glyphicon glyphicon-retweet" aria-hidden="true"></span></a> | <a href="javascript:;" style="color:#f00;" class="domainRemover" rel=\''+denylist[i]+'\'><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></div>'+denylist[i]+'</div>';
 		}
 	}
 	$('#allowlist').html(allowlistCompiled);
@@ -877,7 +877,7 @@ function fpListProcess(fpType) {
 }
 function listclear(type) {
 	if (confirm(['Clear allowlist?','Clear denylist?'][type])) {
-		bkg.saveSetting(['whiteList','blackList'][type], JSON.stringify([]));
+		bkg.saveSetting(['allowlist','denylist'][type], JSON.stringify([]));
 		listUpdate();
 		bkg.cacheLists();
 		if (bkg.freshSync(2)) {

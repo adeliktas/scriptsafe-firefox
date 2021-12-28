@@ -796,27 +796,27 @@
       "message": "防止通過WebVR API檢測到裝置"
    },
    "blackbind": {
-      "description": "+ Blacklist",
+      "description": "+ denylist",
       "message": "+ 黑名單"
    },
    "whitebind": {
-      "description": "+ Whitelist",
+      "description": "+ allowlist",
       "message": "+ 允許名單"
    },
    "denylist": {
-      "description": "Blacklist",
+      "description": "denylist",
       "message": "黑名單"
    },
    "allowlist": {
-      "description": "Whitelist",
+      "description": "allowlist",
       "message": "允許名單"
    },
    "denylisted": {
-      "description": "Blacklisted",
+      "description": "denylisted",
       "message": "列入黑名單"
    },
    "allowlisted": {
-      "description": "Whitelisted",
+      "description": "allowlisted",
       "message": "列入允許名單"
    },
    "denylistlow": {
@@ -828,15 +828,15 @@
       "message": "允許名單"
    },
    "denylistmove": {
-      "description": "Move to Blacklist",
+      "description": "Move to denylist",
       "message": "移到黑名單"
    },
    "allowlistmove": {
-      "description": "Move to Whitelist",
+      "description": "Move to allowlist",
       "message": "移到允許名單"
    },
    "allowlistdenylist": {
-      "description": "Whitelist / Blacklist",
+      "description": "allowlist / denylist",
       "message": "允許名單或黑名單"
    },
    "xml": {

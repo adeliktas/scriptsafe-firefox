@@ -796,27 +796,27 @@
       "message": "förhindra att ha anordningar som upptäckts via WebVR API"
    },
    "blackbind": {
-      "description": "+ Blacklist",
+      "description": "+ denylist",
       "message": "+ Svartlista"
    },
    "whitebind": {
-      "description": "+ Whitelist",
+      "description": "+ allowlist",
       "message": "+ Vitlista"
    },
    "denylist": {
-      "description": "Blacklist",
+      "description": "denylist",
       "message": "Svartlista"
    },
    "allowlist": {
-      "description": "Whitelist",
+      "description": "allowlist",
       "message": "Vitlista"
    },
    "denylisted": {
-      "description": "Blacklisted",
+      "description": "denylisted",
       "message": "Svartlistad"
    },
    "allowlisted": {
-      "description": "Whitelisted",
+      "description": "allowlisted",
       "message": "Vitlistad"
    },
    "denylistlow": {
@@ -828,16 +828,16 @@
       "message": "vitlista"
    },
    "denylistmove": {
-      "description": "Move to Blacklist",
+      "description": "Move to denylist",
       "message": "Flytta till Svartlista"
    },
    "allowlistmove": {
-      "description": "Move to Whitelist",
+      "description": "Move to allowlist",
       "message": "Flytta till Vitlista"
    },
    "allowlistdenylist": {
-      "description": "Whitelist / Blacklist",
-      "message": "Whitelist / Svartlista"
+      "description": "allowlist / denylist",
+      "message": "allowlist / Svartlista"
    },
    "xml": {
       "description": "XML HTTP Request Handling:",

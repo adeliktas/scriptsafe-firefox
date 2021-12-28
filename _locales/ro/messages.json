@@ -796,27 +796,27 @@
       "message": "preveniți detectarea dispozitivelor prin intermediul WebVR API"
    },
    "blackbind": {
-      "description": "+ Blacklist",
+      "description": "+ denylist",
       "message": "+ Listă neagră"
    },
    "whitebind": {
-      "description": "+ Whitelist",
+      "description": "+ allowlist",
       "message": "+ Lista albă"
    },
    "denylist": {
-      "description": "Blacklist",
+      "description": "denylist",
       "message": "Listă neagră"
    },
    "allowlist": {
-      "description": "Whitelist",
+      "description": "allowlist",
       "message": "Listă albă"
    },
    "denylisted": {
-      "description": "Blacklisted",
+      "description": "denylisted",
       "message": "În lista neagră"
    },
    "allowlisted": {
-      "description": "Whitelisted",
+      "description": "allowlisted",
       "message": "În lista albă"
    },
    "denylistlow": {
@@ -828,15 +828,15 @@
       "message": "listă albă"
    },
    "denylistmove": {
-      "description": "Move to Blacklist",
+      "description": "Move to denylist",
       "message": "Mutați în lista neagră"
    },
    "allowlistmove": {
-      "description": "Move to Whitelist",
+      "description": "Move to allowlist",
       "message": "Mutați în lista albă"
    },
    "allowlistdenylist": {
-      "description": "Whitelist / Blacklist",
+      "description": "allowlist / denylist",
       "message": "Listă albă / Lista neagră"
    },
    "xml": {

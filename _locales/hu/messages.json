@@ -796,27 +796,27 @@
       "message": "megakadályozza, hogy a WebVR API-n keresztül eszközöket érszékeljenek az oldalak."
    },
    "blackbind": {
-      "description": "+ Blacklist",
+      "description": "+ denylist",
       "message": "+ Tiltólista"
    },
    "whitebind": {
-      "description": "+ Whitelist",
+      "description": "+ allowlist",
       "message": "+ Engedélyező lista"
    },
    "denylist": {
-      "description": "Blacklist",
+      "description": "denylist",
       "message": "Tiltólista"
    },
    "allowlist": {
-      "description": "Whitelist",
+      "description": "allowlist",
       "message": "Engedélyező lista"
    },
    "denylisted": {
-      "description": "Blacklisted",
+      "description": "denylisted",
       "message": "Tiltott"
    },
    "allowlisted": {
-      "description": "Whitelisted",
+      "description": "allowlisted",
       "message": "Engedélyezett"
    },
    "denylistlow": {
@@ -828,15 +828,15 @@
       "message": "engedélyező lista"
    },
    "denylistmove": {
-      "description": "Move to Blacklist",
+      "description": "Move to denylist",
       "message": "Áthelyezés a tiltólistára"
    },
    "allowlistmove": {
-      "description": "Move to Whitelist",
+      "description": "Move to allowlist",
       "message": "Áthelyezés az engedélyező listára"
    },
    "allowlistdenylist": {
-      "description": "Whitelist / Blacklist",
+      "description": "allowlist / denylist",
       "message": "Engedélyező lista / Tiltólista"
    },
    "xml": {

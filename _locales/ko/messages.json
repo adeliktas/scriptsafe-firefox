@@ -796,27 +796,27 @@
       "message": "WebVR API를 통한 장치 감지를 방지합니다"
    },
    "blackbind": {
-      "description": "+ Blacklist",
+      "description": "+ denylist",
       "message": "+ 블랙리스트"
    },
    "whitebind": {
-      "description": "+ Whitelist",
+      "description": "+ allowlist",
       "message": "+ 화이트리스트"
    },
    "denylist": {
-      "description": "Blacklist",
+      "description": "denylist",
       "message": "블랙리스트"
    },
    "allowlist": {
-      "description": "Whitelist",
+      "description": "allowlist",
       "message": "화이트리스트"
    },
    "denylisted": {
-      "description": "Blacklisted",
+      "description": "denylisted",
       "message": "블랙리스트에 등록 됨"
    },
    "allowlisted": {
-      "description": "Whitelisted",
+      "description": "allowlisted",
       "message": "화이트리스트에 등록 됨"
    },
    "denylistlow": {
@@ -828,15 +828,15 @@
       "message": "화이트리스트"
    },
    "denylistmove": {
-      "description": "Move to Blacklist",
+      "description": "Move to denylist",
       "message": "블랙리스트로 이동"
    },
    "allowlistmove": {
-      "description": "Move to Whitelist",
+      "description": "Move to allowlist",
       "message": "화이트리스트로 이동"
    },
    "allowlistdenylist": {
-      "description": "Whitelist / Blacklist",
+      "description": "allowlist / denylist",
       "message": "화이트리스트 / 블랙리스트"
    },
    "xml": {

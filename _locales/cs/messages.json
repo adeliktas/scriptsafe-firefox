@@ -796,27 +796,27 @@
       "message": "předchází detekci zařízení skrz WebVR API"
    },
    "blackbind": {
-      "description": "+ Blacklist",
+      "description": "+ denylist",
       "message": "+ Černá listina"
    },
    "whitebind": {
-      "description": "+ Whitelist",
+      "description": "+ allowlist",
       "message": "+ Bílá listina"
    },
    "denylist": {
-      "description": "Blacklist",
+      "description": "denylist",
       "message": "Černá Listina"
    },
    "allowlist": {
-      "description": "Whitelist",
+      "description": "allowlist",
       "message": "Bílá listina"
    },
    "denylisted": {
-      "description": "Blacklisted",
+      "description": "denylisted",
       "message": "Na černé listině"
    },
    "allowlisted": {
-      "description": "Whitelisted",
+      "description": "allowlisted",
       "message": "Na bílé listině"
    },
    "denylistlow": {
@@ -828,15 +828,15 @@
       "message": "bílá listina"
    },
    "denylistmove": {
-      "description": "Move to Blacklist",
+      "description": "Move to denylist",
       "message": "Přesunout na Černou listinu"
    },
    "allowlistmove": {
-      "description": "Move to Whitelist",
+      "description": "Move to allowlist",
       "message": "Přesunout na Bílou listinu"
    },
    "allowlistdenylist": {
-      "description": "Whitelist / Blacklist",
+      "description": "allowlist / denylist",
       "message": "Bílá listina / Černá listina"
    },
    "xml": {

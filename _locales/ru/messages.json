@@ -796,27 +796,27 @@
       "message": "предотвращает получение списка имеющихся устройств, обнаруженных с помощью WebVR API"
    },
    "blackbind": {
-      "description": "+ Blacklist",
+      "description": "+ denylist",
       "message": "+ Черный список"
    },
    "whitebind": {
-      "description": "+ Whitelist",
+      "description": "+ allowlist",
       "message": "+ Белый список"
    },
    "denylist": {
-      "description": "Blacklist",
+      "description": "denylist",
       "message": "Черный список"
    },
    "allowlist": {
-      "description": "Whitelist",
+      "description": "allowlist",
       "message": "Белый список"
    },
    "denylisted": {
-      "description": "Blacklisted",
+      "description": "denylisted",
       "message": "В черный список добавлен"
    },
    "allowlisted": {
-      "description": "Whitelisted",
+      "description": "allowlisted",
       "message": "В белый список добавлен"
    },
    "denylistlow": {
@@ -828,15 +828,15 @@
       "message": "белый список"
    },
    "denylistmove": {
-      "description": "Move to Blacklist",
+      "description": "Move to denylist",
       "message": "Переместить в черный список"
    },
    "allowlistmove": {
-      "description": "Move to Whitelist",
+      "description": "Move to allowlist",
       "message": "Переместить в белый список"
    },
    "allowlistdenylist": {
-      "description": "Whitelist / Blacklist",
+      "description": "allowlist / denylist",
       "message": "Белый список / Черный список"
    },
    "xml": {

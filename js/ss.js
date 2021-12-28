@@ -1,6 +1,6 @@
 // ScriptSafe - Copyright (C) andryou
 // Distributed under the terms of the GNU General Public License
-// The GNU General Public License can be found in the gpl.txt file. Alternatively, see <http://www.gnu.org/licenses/>.
+// The GNU General Public License can be found in the LICENSE file. Alternatively, see <http://www.gnu.org/licenses/>.
 var savedBeforeloadEvents = new Array();
 var timer;
 var iframe = 0;
@@ -12,10 +12,10 @@ var SETTINGS = {
 	"MODE": "block",
 	"LISTSTATUS": "false",
 	"DOMAINSTATUS": "-1",
-	"WHITELIST": "",
-	"BLACKLIST": "",
-	"WHITELISTSESSION": "",
-	"BLACKLISTSESSION": "",
+	"allowlist": "",
+	"denylist": "",
+	"allowlistSESSION": "",
+	"denylistSESSION": "",
 	"SCRIPT": "true",
 	"NOSCRIPT": "true",
 	"OBJECT": "true",
@@ -46,7 +46,7 @@ var SETTINGS = {
 	"LINKTARGET": "off",
 	"EXPERIMENTAL": "0",
 	"REFERRER": "true",
-	"REFERRERSPOOFDENYWHITELISTED": "true",
+	"REFERRERSPOOFDENYallowlistED": "true",
 	"PARANOIA": "true",
 	"CLIPBOARD": "false",
 	"DATAURL": "true",
@@ -63,10 +63,10 @@ chrome.runtime.sendMessage({reqtype: "get-settings", iframe: iframe}, function(r
 		SETTINGS['ANNOYANCES'] = response.annoyances;
 		SETTINGS['ANNOYANCESMODE'] = response.annoyancesmode;
 		SETTINGS['ANTISOCIAL'] = response.antisocial;
-		SETTINGS['WHITELIST'] = response.allowlist;
-		SETTINGS['BLACKLIST'] = response.denylist;	
-		SETTINGS['WHITELISTSESSION'] = response.allowlistSession;
-		SETTINGS['BLACKLISTSESSION'] = response.blackListSession;
+		SETTINGS['allowlist'] = response.allowlist;
+		SETTINGS['denylist'] = response.denylist;	
+		SETTINGS['allowlistSESSION'] = response.allowlistSession;
+		SETTINGS['denylistSESSION'] = response.denylistSession;
 		SETTINGS['SCRIPT'] = response.script;
 		SETTINGS['PRESERVESAMEDOMAIN'] = response.preservesamedomain;
 		SETTINGS['EXPERIMENTAL'] = response.experimental;
@@ -116,7 +116,7 @@ chrome.runtime.sendMessage({reqtype: "get-settings", iframe: iframe}, function(r
 		if (SETTINGS['LINKTARGET'] == 'same') linktrgt = '_self';
 		else if (SETTINGS['LINKTARGET'] == 'new') linktrgt = '_blank';
 		SETTINGS['REFERRER'] = response.referrer;
-		SETTINGS['REFERRERSPOOFDENYWHITELISTED'] = response.referrerspoofdenyallowlisted;
+		SETTINGS['REFERRERSPOOFDENYallowlistED'] = response.referrerspoofdenyallowlisted;
 		SETTINGS['PARANOIA'] = response.paranoia;
 		SETTINGS['USERAGENT'] = response.useragent;
 		if (SETTINGS['USERAGENT'] != '' && (response.uaspoofallow == 'true' || SETTINGS['DOMAINSTATUS'] != '0')) {
@@ -448,11 +448,11 @@ function loaded() {
 	new MutationObserver(ScriptSafe).observe(document.querySelector("body"), { childList: true, subtree : true, attributes: false, characterData : false });
 }
 function ScriptSafe() {
-	if (SETTINGS['LINKTARGET'] != 'off' || SETTINGS['DATAURL'] == 'true' || SETTINGS['REFERRER'] == 'alldomains' || (SETTINGS['REFERRER'] == 'true' && (SETTINGS['DOMAINSTATUS'] != '0' || SETTINGS['REFERRERSPOOFDENYWHITELISTED'] == 'true'))) {
+	if (SETTINGS['LINKTARGET'] != 'off' || SETTINGS['DATAURL'] == 'true' || SETTINGS['REFERRER'] == 'alldomains' || (SETTINGS['REFERRER'] == 'true' && (SETTINGS['DOMAINSTATUS'] != '0' || SETTINGS['REFERRERSPOOFDENYallowlistED'] == 'true'))) {
 		$("a[data-ss"+timestamp+"!='1']").each(function() {
 			var elSrc = getElSrc(this);
 			var attr = {};		
-			if ((SETTINGS['REFERRER'] == 'alldomains' || (SETTINGS['REFERRER'] == 'true' && (SETTINGS['DOMAINSTATUS'] != '0' || SETTINGS['REFERRERSPOOFDENYWHITELISTED'] == 'true'))) && thirdParty(elSrc)) attr['rel'] = 'noreferrer';
+			if ((SETTINGS['REFERRER'] == 'alldomains' || (SETTINGS['REFERRER'] == 'true' && (SETTINGS['DOMAINSTATUS'] != '0' || SETTINGS['REFERRERSPOOFDENYallowlistED'] == 'true'))) && thirdParty(elSrc)) attr['rel'] = 'noreferrer';
 			if (SETTINGS['LINKTARGET'] != 'off') {
 				if ($(this).attr('target') != linktrgt) attr['target'] = linktrgt;
 			}
@@ -578,11 +578,11 @@ function domainCheck(domain, req) {
 	}
 	var domainname = extractDomainFromURL(domain);
 	if (req != '2') {
-		if (SETTINGS['MODE'] == 'block' && in_array(domainname, SETTINGS['WHITELISTSESSION'])) return '0';
-		if (SETTINGS['MODE'] == 'allow' && in_array(domainname, SETTINGS['BLACKLISTSESSION'])) return '1';
+		if (SETTINGS['MODE'] == 'block' && in_array(domainname, SETTINGS['allowlistSESSION'])) return '0';
+		if (SETTINGS['MODE'] == 'allow' && in_array(domainname, SETTINGS['denylistSESSION'])) return '1';
 	}
-	if (in_array(domainname, SETTINGS['WHITELIST'])) return '0';
-	if (in_array(domainname, SETTINGS['BLACKLIST'])) return '1';
+	if (in_array(domainname, SETTINGS['allowlist'])) return '0';
+	if (in_array(domainname, SETTINGS['denylist'])) return '1';
 	if (req === undefined) {
 		if (SETTINGS['ANNOYANCES'] == 'true' && SETTINGS['ANNOYANCESMODE'] == 'relaxed' && baddiesCheck) return '1';
 	}
@@ -807,7 +807,7 @@ function block(event) {
 					|| (elType == "VIDEO" && SETTINGS['VIDEO'] == 'true')
 					|| (elType == "AUDIO" && SETTINGS['AUDIO'] == 'true')
 					|| (elType == "IMG" && SETTINGS['IMAGE'] == 'true')
-					|| (elType == "A" && (SETTINGS['REFERRER'] == 'alldomains' || (SETTINGS['REFERRER'] == 'true' && (SETTINGS['DOMAINSTATUS'] != '0' || SETTINGS['REFERRERSPOOFDENYWHITELISTED'] == 'true'))))
+					|| (elType == "A" && (SETTINGS['REFERRER'] == 'alldomains' || (SETTINGS['REFERRER'] == 'true' && (SETTINGS['DOMAINSTATUS'] != '0' || SETTINGS['REFERRERSPOOFDENYallowlistED'] == 'true'))))
 				)
 				&& (
 					(SETTINGS['PRESERVESAMEDOMAIN'] != 'false' && (thirdPartyCheck || domainCheckStatus == '1' || baddiesCheck))
@@ -826,9 +826,9 @@ function block(event) {
 			)
 		)
 		|| (
-			(SETTINGS['REFERRER'] == 'alldomains' || (SETTINGS['REFERRER'] == 'true' && (SETTINGS['DOMAINSTATUS'] != '0' || SETTINGS['REFERRERSPOOFDENYWHITELISTED'] == 'true'))) && elType == "A" && (thirdPartyCheck || domainCheckStatus == '1' || baddiesCheck)
+			(SETTINGS['REFERRER'] == 'alldomains' || (SETTINGS['REFERRER'] == 'true' && (SETTINGS['DOMAINSTATUS'] != '0' || SETTINGS['REFERRERSPOOFDENYallowlistED'] == 'true'))) && elType == "A" && (thirdPartyCheck || domainCheckStatus == '1' || baddiesCheck)
 	))) {
-			if ((SETTINGS['REFERRER'] == 'alldomains' || (SETTINGS['REFERRER'] == 'true' && (SETTINGS['DOMAINSTATUS'] != '0' || SETTINGS['REFERRERSPOOFDENYWHITELISTED'] == 'true'))) && elType == "A" && (thirdPartyCheck || domainCheckStatus == '1' || baddiesCheck)) {
+			if ((SETTINGS['REFERRER'] == 'alldomains' || (SETTINGS['REFERRER'] == 'true' && (SETTINGS['DOMAINSTATUS'] != '0' || SETTINGS['REFERRERSPOOFDENYallowlistED'] == 'true'))) && elType == "A" && (thirdPartyCheck || domainCheckStatus == '1' || baddiesCheck)) {
 				$(el).attr("rel","noreferrer");
 			} else {
 				event.preventDefault();

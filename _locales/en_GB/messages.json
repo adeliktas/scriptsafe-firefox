@@ -796,28 +796,28 @@
       "message": "prevent having devices detected via the WebVR API"
    },
    "blackbind": {
-      "description": "+ Blacklist",
-      "message": "+ Blacklist"
+      "description": "+ denylist",
+      "message": "+ denylist"
    },
    "whitebind": {
-      "description": "+ Whitelist",
-      "message": "+ Whitelist"
+      "description": "+ allowlist",
+      "message": "+ allowlist"
    },
    "denylist": {
-      "description": "Blacklist",
-      "message": "Blacklist"
+      "description": "denylist",
+      "message": "denylist"
    },
    "allowlist": {
-      "description": "Whitelist",
-      "message": "Whitelist"
+      "description": "allowlist",
+      "message": "allowlist"
    },
    "denylisted": {
-      "description": "Blacklisted",
-      "message": "Blacklisted"
+      "description": "denylisted",
+      "message": "denylisted"
    },
    "allowlisted": {
-      "description": "Whitelisted",
-      "message": "Whitelisted"
+      "description": "allowlisted",
+      "message": "allowlisted"
    },
    "denylistlow": {
       "description": "denylist",
@@ -828,16 +828,16 @@
       "message": "allowlist"
    },
    "denylistmove": {
-      "description": "Move to Blacklist",
-      "message": "Move to Blacklist"
+      "description": "Move to denylist",
+      "message": "Move to denylist"
    },
    "allowlistmove": {
-      "description": "Move to Whitelist",
-      "message": "Move to Whitelist"
+      "description": "Move to allowlist",
+      "message": "Move to allowlist"
    },
    "allowlistdenylist": {
-      "description": "Whitelist / Blacklist",
-      "message": "Whitelist / Blacklist"
+      "description": "allowlist / denylist",
+      "message": "allowlist / denylist"
    },
    "xml": {
       "description": "XML HTTP Request Handling:",

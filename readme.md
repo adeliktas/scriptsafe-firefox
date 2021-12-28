@@ -20,3 +20,5 @@ More information (quick start, feature list, domain expressions/examples, and mo
 
 ## Credits
 Andryou (original creator) Bitcoin: **39VJ5L9Yd6WocG6r88uE7ZZnM5J2M5bW92**
+
+Adeliktas (current Maintainer) Monero(XMR): **476VnPEVnHh6k9HKZ7H6La4W6YQMd3FLdbQBYNJapUWmbZFUzKZApbqAQSGC1Eik5X7eDWrUE4mxbFWW1cph4F3BMtBiciB**

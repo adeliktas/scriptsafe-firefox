@@ -1,14 +1,14 @@
 // ScriptSafe - Copyright (C) andryou
 // Distributed under the terms of the GNU General Public License
-// The GNU General Public License can be found in the gpl.txt file. Alternatively, see <http://www.gnu.org/licenses/>.
+// The GNU General Public License can be found in the LICENSE file. Alternatively, see <http://www.gnu.org/licenses/>.
 'use strict';
-var version = '1.0.9.8';
+var version = '1.1.0.1';
 var bkg = chrome.extension.getBackgroundPage();
 var syncstatus;
 document.addEventListener('DOMContentLoaded', function () {
 	loadOptions();
 	$(".closepage").click(closeOptions);
-	$(".refreshpage").click(function(e) { chrome.tabs.reload(); });
+	$(".refreshpage").click(function(e) { chrome.tabs.reload({bypassCache: true}); });
 });
 function closeOptions() {
 	window.open('', '_self', '');window.close();

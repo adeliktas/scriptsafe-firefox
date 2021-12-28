@@ -796,27 +796,27 @@
       "message": "novērš pieejamo ierīču saraksta iegūšanu, WebVR API izmantojot, atrastos"
    },
    "blackbind": {
-      "description": "+ Blacklist",
+      "description": "+ denylist",
       "message": "+ Melnais Saraksts"
    },
    "whitebind": {
-      "description": "+ Whitelist",
+      "description": "+ allowlist",
       "message": "+ Baltais Saraksts"
    },
    "denylist": {
-      "description": "Blacklist",
+      "description": "denylist",
       "message": "Melnais Saraksts"
    },
    "allowlist": {
-      "description": "Whitelist",
+      "description": "allowlist",
       "message": "Baltais Saraksts"
    },
    "denylisted": {
-      "description": "Blacklisted",
+      "description": "denylisted",
       "message": "Pievienots melnajā sarakstā"
    },
    "allowlisted": {
-      "description": "Whitelisted",
+      "description": "allowlisted",
       "message": "Pievienots baltajā sarakstā"
    },
    "denylistlow": {
@@ -828,15 +828,15 @@
       "message": "baltais saraksts"
    },
    "denylistmove": {
-      "description": "Move to Blacklist",
+      "description": "Move to denylist",
       "message": "Pārvietot melnajā sarakstā"
    },
    "allowlistmove": {
-      "description": "Move to Whitelist",
+      "description": "Move to allowlist",
       "message": "Pārvietot baltajā sarakstā"
    },
    "allowlistdenylist": {
-      "description": "Whitelist/Blacklist",
+      "description": "allowlist/denylist",
       "message": "Baltais saraksts/Melnais saraksts"
    },
    "xml": {

@@ -76,15 +76,15 @@
       "message": "Ustawienia Postępowania"
    },
    "blackbind": {
-      "description": "+ Blacklist",
+      "description": "+ denylist",
       "message": "+ Czarna Lista"
    },
    "denylist": {
-      "description": "Blacklist",
+      "description": "denylist",
       "message": "Czarna Lista"
    },
    "denylisted": {
-      "description": "Blacklisted",
+      "description": "denylisted",
       "message": "Na Czarnej Liście"
    },
    "denylistlow": {
@@ -92,7 +92,7 @@
       "message": "czarna lista"
    },
    "denylistmove": {
-      "description": "Move to Blacklist",
+      "description": "Move to denylist",
       "message": "Przenieś do Czarnej Listy"
    },
    "block": {
@@ -808,19 +808,19 @@
       "message": "uniemożliwia wykrycie urządzeń za pośrednictwem interfejsu WebVR API"
    },
    "whitebind": {
-      "description": "+ Whitelist",
+      "description": "+ allowlist",
       "message": "+ Biała Lista"
    },
    "allowlist": {
-      "description": "Whitelist",
+      "description": "allowlist",
       "message": "Biała Lista"
    },
    "allowlistdenylist": {
-      "description": "Whitelist / Blacklist",
+      "description": "allowlist / denylist",
       "message": "Biała Lista / Czarna Lista"
    },
    "allowlisted": {
-      "description": "Whitelisted",
+      "description": "allowlisted",
       "message": "Umieszczone na Białej Liście"
    },
    "allowlistlow": {
@@ -828,7 +828,7 @@
       "message": "biała lista"
    },
    "allowlistmove": {
-      "description": "Move to Whitelist",
+      "description": "Move to allowlist",
       "message": "Przenieś do Białej Listy"
    },
    "xml": {

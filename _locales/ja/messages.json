@@ -796,27 +796,27 @@
       "message": "WebVR APIを介して検出されたデバイスを防ぎます"
    },
    "blackbind": {
-      "description": "+ Blacklist",
+      "description": "+ denylist",
       "message": "+ブラックリスト"
    },
    "whitebind": {
-      "description": "+ Whitelist",
+      "description": "+ allowlist",
       "message": "+ホワイトリスト"
    },
    "denylist": {
-      "description": "Blacklist",
+      "description": "denylist",
       "message": "ブラックリスト"
    },
    "allowlist": {
-      "description": "Whitelist",
+      "description": "allowlist",
       "message": "ホワイトリスト"
    },
    "denylisted": {
-      "description": "Blacklisted",
+      "description": "denylisted",
       "message": "ブラックリストに載って"
    },
    "allowlisted": {
-      "description": "Whitelisted",
+      "description": "allowlisted",
       "message": "ホワイトリストに登録"
    },
    "denylistlow": {
@@ -828,15 +828,15 @@
       "message": "ホワイトリスト"
    },
    "denylistmove": {
-      "description": "Move to Blacklist",
+      "description": "Move to denylist",
       "message": "ブラックリストに移動"
    },
    "allowlistmove": {
-      "description": "Move to Whitelist",
+      "description": "Move to allowlist",
       "message": "ホワイトリストに移動"
    },
    "allowlistdenylist": {
-      "description": "Whitelist / Blacklist",
+      "description": "allowlist / denylist",
       "message": "ホワイトリスト/ブラックリスト"
    },
    "xml": {

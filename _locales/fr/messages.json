@@ -796,27 +796,27 @@
       "message": "éviter d'avoir les périphériques détectés via l'API WebVR"
    },
    "blackbind": {
-      "description": "+ Blacklist",
+      "description": "+ denylist",
       "message": "+ Liste noire"
    },
    "whitebind": {
-      "description": "+ Whitelist",
+      "description": "+ allowlist",
       "message": "+ Liste blanche"
    },
    "denylist": {
-      "description": "Blacklist",
+      "description": "denylist",
       "message": "Liste noire"
    },
    "allowlist": {
-      "description": "Whitelist",
+      "description": "allowlist",
       "message": "Liste blanche"
    },
    "denylisted": {
-      "description": "Blacklisted",
+      "description": "denylisted",
       "message": "Sur la liste noire"
    },
    "allowlisted": {
-      "description": "Whitelisted",
+      "description": "allowlisted",
       "message": "Sur la liste blanche"
    },
    "denylistlow": {
@@ -828,15 +828,15 @@
       "message": "liste blanche"
    },
    "denylistmove": {
-      "description": "Move to Blacklist",
+      "description": "Move to denylist",
       "message": "Déplacer vers la liste noire"
    },
    "allowlistmove": {
-      "description": "Move to Whitelist",
+      "description": "Move to allowlist",
       "message": "Déplacer vers la liste blanche"
    },
    "allowlistdenylist": {
-      "description": "Whitelist / Blacklist",
+      "description": "allowlist / denylist",
       "message": "Liste blanche / Liste noire"
    },
    "xml": {
